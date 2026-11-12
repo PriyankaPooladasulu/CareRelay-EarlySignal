@@ -1,0 +1,45 @@
+{
+  "version":"1.0",
+  "disclaimer":"Curated navigation information checked against official sources. A match is not confirmation of eligibility, availability, clinical suitability or an appointment. No service is contacted by this prototype.",
+  "resources":[
+    {
+      "id":"uhn_eye_existing_referral",
+      "name":"UHN Comprehensive Ophthalmology Unit: existing-referral pathway",
+      "kind":"clinic","jurisdiction":["Ontario"],"location":"Toronto, Ontario; confirm the specific clinic location with UHN",
+      "delivery":"in_person",
+      "purpose":"Review an already-established referral with the clinic or referring care team. This is not a new referral or a screening recommendation.",
+      "eligibility":"Prototype selection requires an existing referral to this specific clinic confirmed by the synthetic scenario user. UHN must confirm acceptance and suitability.",
+      "requires_existing_referral":true,"languages":[],"accessibility":[],"requires_phone":false,
+      "source_urls":["https://www.uhn.ca/Krembil/Clinics/Comprehensive_Ophthalmology","https://www.uhn.ca/Krembil/DKJ-Eye-Institute/Pages/clinics-and-services.aspx"],
+      "verified_on":"2026-11-01","review_due":"2027-01-30",
+      "verification_note":"Official UHN pages establish the unit and describe clinic visits. Existing-referral gating is a conservative prototype policy, not a claim that every patient qualifies.",
+      "limitations":["The supplied Amina notes do not establish a UHN referral.","Clinic language, step-free access, appointment availability and costs were not verified; do not infer them.","In-person pathway excluded when the user cannot travel. Contacting a clinic does not mean care occurred."]
+    },
+    {
+      "id":"ontario_health811",
+      "name":"Ontario Health811: remote navigation",
+      "kind":"navigation","jurisdiction":["Ontario"],"location":"Remote service for people in Ontario",
+      "delivery":"remote",
+      "purpose":"Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination.",
+      "eligibility":"Ontario navigation service; individual service access and interpretation arrangements should be confirmed directly.",
+      "requires_existing_referral":false,"languages":["en","fr"],"accessibility":["tty"],"requires_phone":true,
+      "source_urls":["https://www.ontario.ca/page/your-health","https://ontariohealth.ca/news/health811-resources-help-providers-support-patients-in-accessing"],
+      "verified_on":"2026-11-01","review_due":"2027-01-30",
+      "verification_note":"Official Ontario/ Ontario Health indexed content confirms telephone navigation, English/French support and TTY access. Full-page retrieval was blocked; this review used the official indexed excerpts. Other specific language support is not assumed.",
+      "limitations":["Navigation alternative only; not an equivalent substitute for an eye exam.","Wait times, individual eligibility and availability are not guaranteed.","Only English/French and TTY are encoded; unknown requested capabilities fail closed."]
+    },
+    {
+      "id":"ontario_optometrist_register",
+      "name":"College of Optometrists of Ontario: public register",
+      "kind":"directory","jurisdiction":["Ontario"],"location":"Online Ontario public register",
+      "delivery":"remote",
+      "purpose":"Look up registration and practice information for an optometrist. Confirm examination services and access directly with the practice.",
+      "eligibility":"Public information lookup; being listed is not confirmation of availability or eligibility for a particular service.",
+      "requires_existing_referral":false,"languages":[],"accessibility":[],"requires_phone":false,
+      "source_urls":["https://collegeoptom.on.ca/public/","https://collegeoptom.on.ca/cgcpt-quicklinks/find-an-optometrist/"],
+      "verified_on":"2026-11-01","review_due":"2027-01-30",
+      "verification_note":"Official College pages describe the public register and registration/practice information. The prototype does not scrape or select individual practitioners.",
+      "limitations":["Directory only, not a booked service or a medical recommendation.","Specific languages, accessibility, prices and appointment availability are unknown."]
+    }
+  ]
+}

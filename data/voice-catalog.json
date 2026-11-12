@@ -1,0 +1,396 @@
+{
+  "version": "1.0",
+  "questions": [
+    {
+      "question": "what is the retina?",
+      "topic": "retina"
+    },
+    {
+      "question": "why does this follow-up matter?",
+      "topic": "follow_up"
+    },
+    {
+      "question": "what can happen generally?",
+      "topic": "progression"
+    },
+    {
+      "question": "what can i do next?",
+      "topic": "next_steps"
+    },
+    {
+      "question": "what do my records say?",
+      "topic": "patient_facts"
+    },
+    {
+      "question": "do i have diabetic retinopathy?",
+      "topic": "diagnosis"
+    }
+  ],
+  "scripts": [
+    {
+      "topic": "retina",
+      "state": null,
+      "mode": "allowlisted_scripts",
+      "approval": "prototype_allowlist_not_clinical_approval",
+      "refused": false,
+      "revision": null,
+      "segments": [
+        {
+          "scope": "general_education",
+          "text": "At the back of the eye, the retina turns incoming light into signals used for vision.",
+          "source_ids": [
+            "nei_anatomy"
+          ],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "General educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.",
+          "source_ids": [],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "These four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+          "source_ids": [],
+          "event_ids": []
+        }
+      ],
+      "transcript": "At the back of the eye, the retina turns incoming light into signals used for vision.\n\nGeneral educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.\n\nThese four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+      "sources": [
+        {
+          "id": "nei_anatomy",
+          "title": "How the Eyes Work",
+          "publisher": "National Eye Institute, NIH",
+          "url": "https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work",
+          "checked_on": "2026-10-31"
+        }
+      ],
+      "evidence": [],
+      "audio_available": false
+    },
+    {
+      "topic": "follow_up",
+      "state": null,
+      "mode": "allowlisted_scripts",
+      "approval": "prototype_allowlist_not_clinical_approval",
+      "refused": false,
+      "revision": null,
+      "segments": [
+        {
+          "scope": "general_education",
+          "text": "Diabetes-related retinal changes can begin without noticeable symptoms. A dilated eye examination lets an eye professional check the retina. A record reminder is a reason to clarify documented follow-up, not evidence that someone has retinal disease.",
+          "source_ids": [
+            "nei_retinopathy"
+          ],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "General educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.",
+          "source_ids": [],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "These four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+          "source_ids": [],
+          "event_ids": []
+        }
+      ],
+      "transcript": "Diabetes-related retinal changes can begin without noticeable symptoms. A dilated eye examination lets an eye professional check the retina. A record reminder is a reason to clarify documented follow-up, not evidence that someone has retinal disease.\n\nGeneral educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.\n\nThese four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+      "sources": [
+        {
+          "id": "nei_retinopathy",
+          "title": "Diabetic Retinopathy",
+          "publisher": "National Eye Institute, NIH",
+          "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/diabetic-retinopathy",
+          "checked_on": "2026-10-31"
+        }
+      ],
+      "evidence": [],
+      "audio_available": false
+    },
+    {
+      "topic": "progression",
+      "state": null,
+      "mode": "allowlisted_scripts",
+      "approval": "prototype_allowlist_not_clinical_approval",
+      "refused": false,
+      "revision": null,
+      "segments": [
+        {
+          "scope": "general_education",
+          "text": "In early diabetic retinopathy, small vessel walls may weaken and bulge. People may not notice symptoms.",
+          "source_ids": [
+            "cdc_vision"
+          ],
+          "event_ids": []
+        },
+        {
+          "scope": "general_education",
+          "text": "Fluid leaking from damaged vessels can cause swelling in the macula and affect central vision. This example is not a separate formal disease stage.",
+          "source_ids": [
+            "nei_retinopathy"
+          ],
+          "event_ids": []
+        },
+        {
+          "scope": "general_education",
+          "text": "Advanced proliferative disease can involve fragile new vessels that bleed. This is a general example, not a forecast for any patient.",
+          "source_ids": [
+            "cdc_vision"
+          ],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "General educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.",
+          "source_ids": [],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "These four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+          "source_ids": [],
+          "event_ids": []
+        }
+      ],
+      "transcript": "In early diabetic retinopathy, small vessel walls may weaken and bulge. People may not notice symptoms.\n\nFluid leaking from damaged vessels can cause swelling in the macula and affect central vision. This example is not a separate formal disease stage.\n\nAdvanced proliferative disease can involve fragile new vessels that bleed. This is a general example, not a forecast for any patient.\n\nGeneral educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.\n\nThese four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+      "sources": [
+        {
+          "id": "nei_retinopathy",
+          "title": "Diabetic Retinopathy",
+          "publisher": "National Eye Institute, NIH",
+          "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/diabetic-retinopathy",
+          "checked_on": "2026-10-31"
+        },
+        {
+          "id": "cdc_vision",
+          "title": "Vision Loss and Diabetes",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/diabetes/diabetes-complications/diabetes-and-vision-loss.html",
+          "checked_on": "2026-10-31"
+        }
+      ],
+      "evidence": [],
+      "audio_available": false
+    },
+    {
+      "topic": "next_steps",
+      "state": null,
+      "mode": "allowlisted_scripts",
+      "approval": "prototype_allowlist_not_clinical_approval",
+      "refused": false,
+      "revision": null,
+      "segments": [
+        {
+          "scope": "safety",
+          "text": "Review the original follow-up recommendation with your care team and clarify whether completion documentation exists. The Action Center can prepare a local calendar reminder after explicit approval. This prototype does not book appointments or send messages.",
+          "source_ids": [],
+          "event_ids": []
+        }
+      ],
+      "transcript": "Review the original follow-up recommendation with your care team and clarify whether completion documentation exists. The Action Center can prepare a local calendar reminder after explicit approval. This prototype does not book appointments or send messages.",
+      "sources": [],
+      "evidence": [],
+      "audio_available": false
+    },
+    {
+      "topic": "diagnosis",
+      "state": null,
+      "mode": "allowlisted_scripts",
+      "approval": "prototype_allowlist_not_clinical_approval",
+      "refused": true,
+      "revision": null,
+      "segments": [
+        {
+          "scope": "safety",
+          "text": "I cannot diagnose an eye condition, assign a disease stage, predict your vision, or recommend personal treatment. An eye-care professional must assess your eyes. I can explain the approved general topics or show the supplied record evidence.",
+          "source_ids": [],
+          "event_ids": []
+        }
+      ],
+      "transcript": "I cannot diagnose an eye condition, assign a disease stage, predict your vision, or recommend personal treatment. An eye-care professional must assess your eyes. I can explain the approved general topics or show the supplied record evidence.",
+      "sources": [],
+      "evidence": [],
+      "audio_available": false
+    },
+    {
+      "topic": "state",
+      "state": "normal",
+      "mode": "allowlisted_scripts",
+      "approval": "prototype_allowlist_not_clinical_approval",
+      "refused": false,
+      "revision": null,
+      "segments": [
+        {
+          "scope": "general_education",
+          "text": "This reference view introduces retinal anatomy and visual signalling. It does not establish that a particular person's eyes are healthy.",
+          "source_ids": [
+            "nei_anatomy"
+          ],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "General educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.",
+          "source_ids": [],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "These four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+          "source_ids": [],
+          "event_ids": []
+        }
+      ],
+      "transcript": "This reference view introduces retinal anatomy and visual signalling. It does not establish that a particular person's eyes are healthy.\n\nGeneral educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.\n\nThese four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+      "sources": [
+        {
+          "id": "nei_anatomy",
+          "title": "How the Eyes Work",
+          "publisher": "National Eye Institute, NIH",
+          "url": "https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work",
+          "checked_on": "2026-10-31"
+        }
+      ],
+      "evidence": [],
+      "audio_available": false
+    },
+    {
+      "topic": "state",
+      "state": "early",
+      "mode": "allowlisted_scripts",
+      "approval": "prototype_allowlist_not_clinical_approval",
+      "refused": false,
+      "revision": null,
+      "segments": [
+        {
+          "scope": "general_education",
+          "text": "In early diabetic retinopathy, small vessel walls may weaken and bulge. People may not notice symptoms.",
+          "source_ids": [
+            "cdc_vision"
+          ],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "General educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.",
+          "source_ids": [],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "These four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+          "source_ids": [],
+          "event_ids": []
+        }
+      ],
+      "transcript": "In early diabetic retinopathy, small vessel walls may weaken and bulge. People may not notice symptoms.\n\nGeneral educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.\n\nThese four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+      "sources": [
+        {
+          "id": "cdc_vision",
+          "title": "Vision Loss and Diabetes",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/diabetes/diabetes-complications/diabetes-and-vision-loss.html",
+          "checked_on": "2026-10-31"
+        }
+      ],
+      "evidence": [],
+      "audio_available": false
+    },
+    {
+      "topic": "state",
+      "state": "progressing",
+      "mode": "allowlisted_scripts",
+      "approval": "prototype_allowlist_not_clinical_approval",
+      "refused": false,
+      "revision": null,
+      "segments": [
+        {
+          "scope": "general_education",
+          "text": "Fluid leaking from damaged vessels can cause swelling in the macula and affect central vision. This example is not a separate formal disease stage.",
+          "source_ids": [
+            "nei_retinopathy"
+          ],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "General educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.",
+          "source_ids": [],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "These four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+          "source_ids": [],
+          "event_ids": []
+        }
+      ],
+      "transcript": "Fluid leaking from damaged vessels can cause swelling in the macula and affect central vision. This example is not a separate formal disease stage.\n\nGeneral educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.\n\nThese four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+      "sources": [
+        {
+          "id": "nei_retinopathy",
+          "title": "Diabetic Retinopathy",
+          "publisher": "National Eye Institute, NIH",
+          "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/diabetic-retinopathy",
+          "checked_on": "2026-10-31"
+        }
+      ],
+      "evidence": [],
+      "audio_available": false
+    },
+    {
+      "topic": "state",
+      "state": "advanced",
+      "mode": "allowlisted_scripts",
+      "approval": "prototype_allowlist_not_clinical_approval",
+      "refused": false,
+      "revision": null,
+      "segments": [
+        {
+          "scope": "general_education",
+          "text": "Advanced proliferative disease can involve fragile new vessels that bleed. This is a general example, not a forecast for any patient.",
+          "source_ids": [
+            "cdc_vision"
+          ],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "General educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.",
+          "source_ids": [],
+          "event_ids": []
+        },
+        {
+          "scope": "limitation",
+          "text": "These four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+          "source_ids": [],
+          "event_ids": []
+        }
+      ],
+      "transcript": "Advanced proliferative disease can involve fragile new vessels that bleed. This is a general example, not a forecast for any patient.\n\nGeneral educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.\n\nThese four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+      "sources": [
+        {
+          "id": "cdc_vision",
+          "title": "Vision Loss and Diabetes",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/diabetes/diabetes-complications/diabetes-and-vision-loss.html",
+          "checked_on": "2026-10-31"
+        }
+      ],
+      "evidence": [],
+      "audio_available": false
+    }
+  ],
+  "patient_facts": "Generated only from the current validated analysis; never use prerecorded patient facts.",
+  "rules": [
+    "Use the supplied transcript verbatim for narration and captions.",
+    "Keep patient_record and general_education segments visually separate.",
+    "Display source links and evidence for their matching segments.",
+    "Unknown free-text questions return a fixed refusal; no LLM is called.",
+    "A owns audio assets/playback; text remains available when audio fails."
+  ]
+}

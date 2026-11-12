@@ -1,0 +1,2484 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "CareRelay EarlySignal - Member B release",
+    "description": "Synthetic-only local prototype: records, structured extraction and evidence. No clinical validation or authentication; bind to 127.0.0.1.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina": {
+      "get": {
+        "summary": "Get Patient",
+        "operationId": "get_patient_api_cases_amina_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/records": {
+      "get": {
+        "summary": "Records",
+        "operationId": "records_api_cases_amina_records_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Record"
+                  },
+                  "type": "array",
+                  "title": "Response Records Api Cases Amina Records Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/records/{source_id}": {
+      "get": {
+        "summary": "Source",
+        "operationId": "source_api_cases_amina_records__source_id__get",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Record"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/analyze": {
+      "post": {
+        "summary": "Analyze Case",
+        "operationId": "analyze_case_api_cases_amina_analyze_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalyzeRequest",
+                "default": {
+                  "mode": "demo"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Analysis"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/validate": {
+      "post": {
+        "summary": "Validate",
+        "operationId": "validate_api_cases_amina_validate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidateBatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateValidation"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/timeline": {
+      "get": {
+        "summary": "Timeline",
+        "operationId": "timeline_api_cases_amina_timeline_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/events/{event_id}/evidence": {
+      "get": {
+        "summary": "Evidence",
+        "operationId": "evidence_api_cases_amina_events__event_id__evidence_get",
+        "parameters": [
+          {
+            "name": "event_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Event Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/signals": {
+      "get": {
+        "summary": "Signals",
+        "operationId": "signals_api_cases_amina_signals_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalReport"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/education/retina": {
+      "get": {
+        "summary": "Education",
+        "operationId": "education_api_education_retina_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EducationContent"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/voice/catalog": {
+      "get": {
+        "summary": "Narration Catalog",
+        "operationId": "narration_catalog_api_voice_catalog_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/voice": {
+      "post": {
+        "summary": "Narration",
+        "operationId": "narration_api_cases_amina_voice_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VoiceRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/resources": {
+      "get": {
+        "summary": "Resources",
+        "operationId": "resources_api_resources_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceRegistry"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/plan": {
+      "post": {
+        "summary": "Navigation Plan",
+        "operationId": "navigation_plan_api_cases_amina_plan_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlanRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plan"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/plans/{plan_id}": {
+      "get": {
+        "summary": "Get Plan",
+        "operationId": "get_plan_api_plans__plan_id__get",
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Plan Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plan"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/actions": {
+      "post": {
+        "summary": "Propose Reminder",
+        "operationId": "propose_reminder_api_cases_amina_actions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProposeReminder"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReminderAction"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/actions/{action_id}": {
+      "get": {
+        "summary": "Get Action",
+        "operationId": "get_action_api_actions__action_id__get",
+        "parameters": [
+          {
+            "name": "action_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Action Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReminderAction"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/actions/{action_id}/approve": {
+      "post": {
+        "summary": "Approve Reminder",
+        "operationId": "approve_reminder_api_actions__action_id__approve_post",
+        "parameters": [
+          {
+            "name": "action_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Action Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApproveReminder"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReminderAction"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/actions/{action_id}/cancel": {
+      "post": {
+        "summary": "Cancel Reminder",
+        "operationId": "cancel_reminder_api_actions__action_id__cancel_post",
+        "parameters": [
+          {
+            "name": "action_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Action Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReminderAction"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/actions/{action_id}/calendar": {
+      "get": {
+        "summary": "Reminder Calendar",
+        "operationId": "reminder_calendar_api_actions__action_id__calendar_get",
+        "parameters": [
+          {
+            "name": "action_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Action Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/actions/{action_id}/complete": {
+      "post": {
+        "summary": "Complete Action",
+        "operationId": "complete_action_api_actions__action_id__complete_post",
+        "parameters": [
+          {
+            "name": "action_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Action Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReminderAction"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cases/amina/audit": {
+      "get": {
+        "summary": "Audit History",
+        "operationId": "audit_history_api_cases_amina_audit_get",
+        "parameters": [
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "After"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditPage"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Analysis": {
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [
+              "deterministic_demo",
+              "live_llm_validated"
+            ],
+            "title": "Mode"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/Event"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "rejected": {
+            "items": {
+              "$ref": "#/components/schemas/Rejection"
+            },
+            "type": "array",
+            "title": "Rejected"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/components/schemas/Record"
+            },
+            "type": "array",
+            "title": "Records"
+          },
+          "revision": {
+            "type": "string",
+            "title": "Revision"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mode",
+          "events",
+          "rejected",
+          "warnings",
+          "records",
+          "revision"
+        ],
+        "title": "Analysis"
+      },
+      "AnalyzeRequest": {
+        "properties": {
+          "records": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/IngestRecord"
+                },
+                "type": "array",
+                "maxItems": 20,
+                "minItems": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Records"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "demo",
+              "live"
+            ],
+            "title": "Mode",
+            "default": "demo"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "AnalyzeRequest"
+      },
+      "ApproveReminder": {
+        "properties": {
+          "approved": {
+            "type": "boolean",
+            "title": "Approved"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "approved"
+        ],
+        "title": "ApproveReminder"
+      },
+      "AuditEvent": {
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "title": "Sequence"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "entity_type": {
+            "type": "string",
+            "enum": [
+              "system",
+              "analysis",
+              "plan",
+              "action"
+            ],
+            "title": "Entity Type"
+          },
+          "entity_id": {
+            "type": "string",
+            "title": "Entity Id"
+          },
+          "event_type": {
+            "type": "string",
+            "title": "Event Type"
+          },
+          "from_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "From Status"
+          },
+          "to_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "To Status"
+          },
+          "revision": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revision"
+          },
+          "details": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Details"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "sequence",
+          "created_at",
+          "entity_type",
+          "entity_id",
+          "event_type",
+          "from_status",
+          "to_status",
+          "revision",
+          "details"
+        ],
+        "title": "AuditEvent"
+      },
+      "AuditPage": {
+        "properties": {
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/AuditEvent"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          },
+          "limitation": {
+            "type": "string",
+            "title": "Limitation",
+            "default": "Local append-only history of successful changes, not an authenticated or tamper-proof medical audit. Legacy snapshots do not reconstruct events before audit logging was installed."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "events",
+          "next_cursor"
+        ],
+        "title": "AuditPage"
+      },
+      "Candidate": {
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "title": "Source Id"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "title": "Date"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "instruction",
+              "observation",
+              "completion",
+              "not_completed",
+              "missing_information"
+            ],
+            "title": "Kind"
+          },
+          "concept": {
+            "type": "string",
+            "enum": [
+              "retinal_exam",
+              "type_2_diabetes",
+              "retinal_referral"
+            ],
+            "title": "Concept"
+          },
+          "quote": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Quote"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source_id",
+          "date",
+          "kind",
+          "concept",
+          "quote"
+        ],
+        "title": "Candidate"
+      },
+      "CandidateBatch": {
+        "properties": {
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/Candidate"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "title": "Events"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "events"
+        ],
+        "title": "CandidateBatch"
+      },
+      "CandidateValidation": {
+        "properties": {
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/Event"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "rejected": {
+            "items": {
+              "$ref": "#/components/schemas/Rejection"
+            },
+            "type": "array",
+            "title": "Rejected"
+          },
+          "saved": {
+            "type": "boolean",
+            "const": false,
+            "title": "Saved",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "events",
+          "rejected"
+        ],
+        "title": "CandidateValidation"
+      },
+      "CompletionReport": {
+        "properties": {
+          "completed_on": {
+            "type": "string",
+            "format": "date",
+            "title": "Completed On"
+          },
+          "reported_by": {
+            "type": "string",
+            "enum": [
+              "patient",
+              "caregiver"
+            ],
+            "title": "Reported By"
+          },
+          "confirmed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Confirmed At"
+          },
+          "basis": {
+            "type": "string",
+            "const": "explicit_unverified_report",
+            "title": "Basis",
+            "default": "explicit_unverified_report"
+          },
+          "clinically_verified": {
+            "type": "boolean",
+            "const": false,
+            "title": "Clinically Verified",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "completed_on",
+          "reported_by",
+          "confirmed_at"
+        ],
+        "title": "CompletionReport"
+      },
+      "CompletionRequest": {
+        "properties": {
+          "confirmed": {
+            "type": "boolean",
+            "title": "Confirmed"
+          },
+          "completed_on": {
+            "type": "string",
+            "format": "date",
+            "title": "Completed On"
+          },
+          "reported_by": {
+            "type": "string",
+            "enum": [
+              "patient",
+              "caregiver"
+            ],
+            "title": "Reported By"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "confirmed",
+          "completed_on",
+          "reported_by"
+        ],
+        "title": "CompletionRequest"
+      },
+      "Constraints": {
+        "properties": {
+          "jurisdiction": {
+            "type": "string",
+            "maxLength": 50,
+            "minLength": 1,
+            "title": "Jurisdiction",
+            "default": "Ontario"
+          },
+          "travel": {
+            "type": "string",
+            "enum": [
+              "any",
+              "cannot_travel"
+            ],
+            "title": "Travel",
+            "default": "any"
+          },
+          "language": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 1,
+            "title": "Language",
+            "default": "any"
+          },
+          "accessibility": {
+            "type": "string",
+            "enum": [
+              "none",
+              "tty",
+              "step_free"
+            ],
+            "title": "Accessibility",
+            "default": "none"
+          },
+          "phone_available": {
+            "type": "boolean",
+            "title": "Phone Available",
+            "default": true
+          },
+          "existing_referral_confirmed": {
+            "type": "boolean",
+            "title": "Existing Referral Confirmed",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Constraints"
+      },
+      "ContentSource": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "publisher": {
+            "type": "string",
+            "title": "Publisher"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "checked_on": {
+            "type": "string",
+            "format": "date",
+            "title": "Checked On"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "publisher",
+          "url",
+          "checked_on"
+        ],
+        "title": "ContentSource"
+      },
+      "DateProvenance": {
+        "properties": {
+          "origin": {
+            "type": "string",
+            "enum": [
+              "supplied_metadata",
+              "source_header",
+              "metadata_and_header"
+            ],
+            "title": "Origin",
+            "default": "supplied_metadata"
+          },
+          "quote": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Quote"
+          },
+          "start": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start"
+          },
+          "end": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "DateProvenance"
+      },
+      "EducationCard": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "source_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Source Ids"
+          },
+          "scope": {
+            "type": "string",
+            "const": "general_education",
+            "title": "Scope",
+            "default": "general_education"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "text",
+          "source_ids"
+        ],
+        "title": "EducationCard"
+      },
+      "EducationContent": {
+        "properties": {
+          "topic": {
+            "type": "string",
+            "const": "retina",
+            "title": "Topic"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "review_status": {
+            "type": "string",
+            "const": "source_checked_prototype_clinical_review_pending",
+            "title": "Review Status"
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer"
+          },
+          "progression_limit": {
+            "type": "string",
+            "title": "Progression Limit"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/ContentSource"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "anatomy": {
+            "items": {
+              "$ref": "#/components/schemas/EducationCard"
+            },
+            "type": "array",
+            "title": "Anatomy"
+          },
+          "follow_up": {
+            "$ref": "#/components/schemas/EducationCard"
+          },
+          "states": {
+            "items": {
+              "$ref": "#/components/schemas/EducationalState"
+            },
+            "type": "array",
+            "title": "States"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "topic",
+          "version",
+          "review_status",
+          "disclaimer",
+          "progression_limit",
+          "sources",
+          "anatomy",
+          "follow_up",
+          "states"
+        ],
+        "title": "EducationContent"
+      },
+      "EducationalState": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "normal",
+              "early",
+              "progressing",
+              "advanced"
+            ],
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "source_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Source Ids"
+          },
+          "scope": {
+            "type": "string",
+            "const": "general_education",
+            "title": "Scope",
+            "default": "general_education"
+          },
+          "anatomy_focus": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Anatomy Focus"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "text",
+          "source_ids",
+          "anatomy_focus"
+        ],
+        "title": "EducationalState"
+      },
+      "Evaluation": {
+        "properties": {
+          "resource_id": {
+            "type": "string",
+            "title": "Resource Id"
+          },
+          "eligible": {
+            "type": "boolean",
+            "title": "Eligible"
+          },
+          "reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Reasons"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "resource_id",
+          "eligible",
+          "reasons"
+        ],
+        "title": "Evaluation"
+      },
+      "Event": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "title": "Date"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "instruction",
+              "observation",
+              "completion",
+              "not_completed",
+              "missing_information"
+            ],
+            "title": "Kind"
+          },
+          "concept": {
+            "type": "string",
+            "enum": [
+              "retinal_exam",
+              "type_2_diabetes",
+              "retinal_referral"
+            ],
+            "title": "Concept"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/Evidence"
+          },
+          "date_provenance": {
+            "$ref": "#/components/schemas/DateProvenance"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "date",
+          "kind",
+          "concept",
+          "text",
+          "evidence"
+        ],
+        "title": "Event"
+      },
+      "Evidence": {
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "title": "Source Id"
+          },
+          "source_title": {
+            "type": "string",
+            "title": "Source Title"
+          },
+          "quote": {
+            "type": "string",
+            "title": "Quote"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Start"
+          },
+          "end": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "End"
+          },
+          "source_sha256": {
+            "type": "string",
+            "title": "Source Sha256"
+          },
+          "validation": {
+            "type": "string",
+            "const": "exact_span_and_bounded_semantic_rule",
+            "title": "Validation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source_id",
+          "source_title",
+          "quote",
+          "start",
+          "end",
+          "source_sha256",
+          "validation"
+        ],
+        "title": "Evidence"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "IngestRecord": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,50}$",
+            "title": "Id"
+          },
+          "date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Date"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Title"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 12000,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "synthetic": {
+            "type": "boolean",
+            "const": true,
+            "title": "Synthetic",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "text"
+        ],
+        "title": "IngestRecord"
+      },
+      "Plan": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "revision": {
+            "type": "string",
+            "title": "Revision"
+          },
+          "signal_id": {
+            "type": "string",
+            "title": "Signal Id"
+          },
+          "constraints": {
+            "$ref": "#/components/schemas/Constraints"
+          },
+          "registry_digest": {
+            "type": "string",
+            "title": "Registry Digest"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "active": {
+            "type": "boolean",
+            "title": "Active",
+            "default": true
+          },
+          "mode": {
+            "type": "string",
+            "const": "deterministic_navigation",
+            "title": "Mode",
+            "default": "deterministic_navigation"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "no_verified_match"
+            ],
+            "title": "Status"
+          },
+          "selected": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Resource"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evaluations": {
+            "items": {
+              "$ref": "#/components/schemas/Evaluation"
+            },
+            "type": "array",
+            "title": "Evaluations"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/PlanStep"
+            },
+            "type": "array",
+            "title": "Steps"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "revision",
+          "signal_id",
+          "constraints",
+          "registry_digest",
+          "created_at",
+          "status",
+          "selected",
+          "evaluations",
+          "steps",
+          "limitations"
+        ],
+        "title": "Plan"
+      },
+      "PlanRequest": {
+        "properties": {
+          "revision": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Revision"
+          },
+          "signal_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Signal Id"
+          },
+          "constraints": {
+            "$ref": "#/components/schemas/Constraints"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "revision",
+          "signal_id"
+        ],
+        "title": "PlanRequest"
+      },
+      "PlanStep": {
+        "properties": {
+          "stage": {
+            "type": "string",
+            "enum": [
+              "checking_resource",
+              "checking_constraints",
+              "rejected",
+              "searching_alternative",
+              "selected",
+              "no_verified_match"
+            ],
+            "title": "Stage"
+          },
+          "resource_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resource Id"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "stage",
+          "message"
+        ],
+        "title": "PlanStep"
+      },
+      "ProposeReminder": {
+        "properties": {
+          "plan_id": {
+            "type": "string",
+            "title": "Plan Id"
+          },
+          "reminder_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Reminder Date"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "plan_id",
+          "reminder_date"
+        ],
+        "title": "ProposeReminder"
+      },
+      "Record": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,50}$",
+            "title": "Id"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "title": "Date"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Title"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 12000,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "synthetic": {
+            "type": "boolean",
+            "const": true,
+            "title": "Synthetic",
+            "default": true
+          },
+          "date_provenance": {
+            "$ref": "#/components/schemas/DateProvenance"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "date",
+          "title",
+          "text"
+        ],
+        "title": "Record"
+      },
+      "Rejection": {
+        "properties": {
+          "candidate": {
+            "$ref": "#/components/schemas/Candidate"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "candidate",
+          "reason"
+        ],
+        "title": "Rejection"
+      },
+      "ReminderAction": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "plan_id": {
+            "type": "string",
+            "title": "Plan Id"
+          },
+          "revision": {
+            "type": "string",
+            "title": "Revision"
+          },
+          "registry_digest": {
+            "type": "string",
+            "title": "Registry Digest"
+          },
+          "resource": {
+            "$ref": "#/components/schemas/Resource"
+          },
+          "reminder_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Reminder Date"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed",
+              "approved",
+              "awaiting_confirmation",
+              "cancelled",
+              "invalidated",
+              "completed"
+            ],
+            "title": "Status",
+            "default": "proposed"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "approved_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approved At"
+          },
+          "calendar_generated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calendar Generated At"
+          },
+          "invalidation_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Invalidation Reason"
+          },
+          "is_appointment": {
+            "type": "boolean",
+            "const": false,
+            "title": "Is Appointment",
+            "default": false
+          },
+          "care_completed": {
+            "type": "boolean",
+            "const": false,
+            "title": "Care Completed",
+            "default": false
+          },
+          "completion": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CompletionReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "plan_id",
+          "revision",
+          "registry_digest",
+          "resource",
+          "reminder_date",
+          "summary",
+          "description",
+          "created_at"
+        ],
+        "title": "ReminderAction"
+      },
+      "Resource": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "clinic",
+              "navigation",
+              "directory"
+            ],
+            "title": "Kind"
+          },
+          "jurisdiction": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Jurisdiction"
+          },
+          "location": {
+            "type": "string",
+            "title": "Location"
+          },
+          "delivery": {
+            "type": "string",
+            "enum": [
+              "in_person",
+              "remote"
+            ],
+            "title": "Delivery"
+          },
+          "purpose": {
+            "type": "string",
+            "title": "Purpose"
+          },
+          "eligibility": {
+            "type": "string",
+            "title": "Eligibility"
+          },
+          "requires_existing_referral": {
+            "type": "boolean",
+            "title": "Requires Existing Referral"
+          },
+          "languages": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Languages"
+          },
+          "accessibility": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Accessibility"
+          },
+          "requires_phone": {
+            "type": "boolean",
+            "title": "Requires Phone"
+          },
+          "source_urls": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Source Urls"
+          },
+          "verified_on": {
+            "type": "string",
+            "format": "date",
+            "title": "Verified On"
+          },
+          "review_due": {
+            "type": "string",
+            "format": "date",
+            "title": "Review Due"
+          },
+          "verification_note": {
+            "type": "string",
+            "title": "Verification Note"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "jurisdiction",
+          "location",
+          "delivery",
+          "purpose",
+          "eligibility",
+          "requires_existing_referral",
+          "languages",
+          "accessibility",
+          "requires_phone",
+          "source_urls",
+          "verified_on",
+          "review_due",
+          "verification_note",
+          "limitations"
+        ],
+        "title": "Resource"
+      },
+      "ResourceRegistry": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "resources": {
+            "items": {
+              "$ref": "#/components/schemas/Resource"
+            },
+            "type": "array",
+            "title": "Resources"
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "version",
+          "resources",
+          "disclaimer"
+        ],
+        "title": "ResourceRegistry"
+      },
+      "Signal": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "rule": {
+            "type": "string",
+            "enum": [
+              "unresolved_instruction",
+              "repeated_observation",
+              "conflict",
+              "missing_information"
+            ],
+            "title": "Rule"
+          },
+          "concept": {
+            "type": "string",
+            "enum": [
+              "retinal_exam",
+              "type_2_diabetes",
+              "retinal_referral"
+            ],
+            "title": "Concept"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "open",
+              "resolved",
+              "needs_review"
+            ],
+            "title": "Status"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/SignalEvidence"
+            },
+            "type": "array",
+            "title": "Evidence"
+          },
+          "education_topic": {
+            "type": "string",
+            "const": "retina",
+            "title": "Education Topic"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "rule",
+          "concept",
+          "status",
+          "title",
+          "summary",
+          "evidence",
+          "education_topic"
+        ],
+        "title": "Signal"
+      },
+      "SignalEvidence": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "title": "Event Id"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "title": "Date"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_id",
+          "date",
+          "evidence"
+        ],
+        "title": "SignalEvidence"
+      },
+      "SignalReport": {
+        "properties": {
+          "revision": {
+            "type": "string",
+            "title": "Revision"
+          },
+          "mode": {
+            "type": "string",
+            "const": "deterministic_rules",
+            "title": "Mode"
+          },
+          "rule_version": {
+            "type": "string",
+            "title": "Rule Version"
+          },
+          "searched_source_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Searched Source Ids"
+          },
+          "signals": {
+            "items": {
+              "$ref": "#/components/schemas/Signal"
+            },
+            "type": "array",
+            "title": "Signals"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          },
+          "extraction_warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Extraction Warnings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "revision",
+          "mode",
+          "rule_version",
+          "searched_source_ids",
+          "signals",
+          "limitations",
+          "extraction_warnings"
+        ],
+        "title": "SignalReport"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VoiceRequest": {
+        "properties": {
+          "topic": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "retina",
+                  "follow_up",
+                  "progression",
+                  "next_steps",
+                  "patient_facts",
+                  "diagnosis",
+                  "state"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Topic"
+          },
+          "question": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 500,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question"
+          },
+          "state": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "normal",
+                  "early",
+                  "progressing",
+                  "advanced"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "State"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "VoiceRequest"
+      },
+      "VoiceResponse": {
+        "properties": {
+          "topic": {
+            "type": "string",
+            "title": "Topic"
+          },
+          "state": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "normal",
+                  "early",
+                  "progressing",
+                  "advanced"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "State"
+          },
+          "mode": {
+            "type": "string",
+            "const": "allowlisted_scripts",
+            "title": "Mode",
+            "default": "allowlisted_scripts"
+          },
+          "approval": {
+            "type": "string",
+            "const": "prototype_allowlist_not_clinical_approval",
+            "title": "Approval",
+            "default": "prototype_allowlist_not_clinical_approval"
+          },
+          "refused": {
+            "type": "boolean",
+            "title": "Refused"
+          },
+          "revision": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revision"
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/components/schemas/VoiceSegment"
+            },
+            "type": "array",
+            "title": "Segments"
+          },
+          "transcript": {
+            "type": "string",
+            "title": "Transcript"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/ContentSource"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/SignalEvidence"
+            },
+            "type": "array",
+            "title": "Evidence"
+          },
+          "audio_available": {
+            "type": "boolean",
+            "const": false,
+            "title": "Audio Available",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "topic",
+          "refused",
+          "segments",
+          "transcript",
+          "sources",
+          "evidence"
+        ],
+        "title": "VoiceResponse"
+      },
+      "VoiceSegment": {
+        "properties": {
+          "scope": {
+            "type": "string",
+            "enum": [
+              "general_education",
+              "patient_record",
+              "limitation",
+              "safety"
+            ],
+            "title": "Scope"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "source_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Source Ids"
+          },
+          "event_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Event Ids"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "scope",
+          "text"
+        ],
+        "title": "VoiceSegment"
+      }
+    }
+  }
+}

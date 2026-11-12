@@ -1,0 +1,11 @@
+{
+  "networkDisabled": true,
+  "httpRequests": [],
+  "jsErrors": [],
+  "sections": 6,
+  "actionButtons": 0,
+  "mobile": {
+    "viewport": 390,
+    "content": 390
+  }
+}

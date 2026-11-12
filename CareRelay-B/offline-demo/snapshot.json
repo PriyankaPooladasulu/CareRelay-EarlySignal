@@ -1,0 +1,1496 @@
+{
+  "release": "1.0.0",
+  "generated_at": "2026-11-05T04:35:49.733880+00:00",
+  "scenario_clock": "2026-11-12T12:00:00+00:00",
+  "mode": "cached_deterministic_demo",
+  "live_ai_run": false,
+  "read_only": true,
+  "analysis": {
+    "mode": "deterministic_demo",
+    "events": [
+      {
+        "id": "evt_9082ee4eb5ccfc0b",
+        "date": "2026-10-03",
+        "kind": "observation",
+        "concept": "type_2_diabetes",
+        "text": "Type 2 diabetes documented in the supplied record",
+        "evidence": {
+          "source_id": "visit1",
+          "source_title": "Synthetic encounter 1",
+          "quote": "Type 2 diabetes is documented in the medical history.",
+          "start": 68,
+          "end": 121,
+          "source_sha256": "2058654c8f3efb52dc800e5c37d665a1b82c727179a670ca887b18077d2987f0",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        },
+        "date_provenance": {
+          "origin": "supplied_metadata",
+          "quote": null,
+          "start": null,
+          "end": null
+        }
+      },
+      {
+        "id": "evt_e3e946dc974358d1",
+        "date": "2026-10-03",
+        "kind": "instruction",
+        "concept": "retinal_exam",
+        "text": "Retinal examination follow-up recommended or discussed",
+        "evidence": {
+          "source_id": "visit1",
+          "source_title": "Synthetic encounter 1",
+          "quote": "Retinal examination recommended.",
+          "start": 122,
+          "end": 154,
+          "source_sha256": "2058654c8f3efb52dc800e5c37d665a1b82c727179a670ca887b18077d2987f0",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        },
+        "date_provenance": {
+          "origin": "supplied_metadata",
+          "quote": null,
+          "start": null,
+          "end": null
+        }
+      },
+      {
+        "id": "evt_3122ea2c4c64942e",
+        "date": "2026-10-13",
+        "kind": "instruction",
+        "concept": "retinal_exam",
+        "text": "Retinal examination follow-up recommended or discussed",
+        "evidence": {
+          "source_id": "visit2",
+          "source_title": "Synthetic encounter 2",
+          "quote": "Previous retinal examination recommendation was discussed again.",
+          "start": 70,
+          "end": 134,
+          "source_sha256": "7206cebe8ba0a5c03d49a72483a80a2eaa3f842467f6bc2f92e47ead123855d6",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        },
+        "date_provenance": {
+          "origin": "supplied_metadata",
+          "quote": null,
+          "start": null,
+          "end": null
+        }
+      },
+      {
+        "id": "evt_4eba79c7ea2656e7",
+        "date": "2026-10-13",
+        "kind": "not_completed",
+        "concept": "retinal_exam",
+        "text": "Record reports follow-up unarranged or completion undocumented",
+        "evidence": {
+          "source_id": "visit2",
+          "source_title": "Synthetic encounter 2",
+          "quote": "No retinal examination result is available in the supplied records.",
+          "start": 135,
+          "end": 202,
+          "source_sha256": "7206cebe8ba0a5c03d49a72483a80a2eaa3f842467f6bc2f92e47ead123855d6",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        },
+        "date_provenance": {
+          "origin": "supplied_metadata",
+          "quote": null,
+          "start": null,
+          "end": null
+        }
+      },
+      {
+        "id": "evt_042c0b247ae15a8b",
+        "date": "2026-10-24",
+        "kind": "not_completed",
+        "concept": "retinal_exam",
+        "text": "Record reports follow-up unarranged or completion undocumented",
+        "evidence": {
+          "source_id": "visit3",
+          "source_title": "Synthetic encounter 3",
+          "quote": "Patient reports that the recommended retinal examination has not yet been arranged.",
+          "start": 32,
+          "end": 115,
+          "source_sha256": "a9f5e61d848af249eff66eac15b23099b205af3c4dc6282c3d07f5570637e885",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        },
+        "date_provenance": {
+          "origin": "supplied_metadata",
+          "quote": null,
+          "start": null,
+          "end": null
+        }
+      },
+      {
+        "id": "evt_5c3ca12281966744",
+        "date": "2026-10-24",
+        "kind": "not_completed",
+        "concept": "retinal_exam",
+        "text": "Record reports follow-up unarranged or completion undocumented",
+        "evidence": {
+          "source_id": "visit3",
+          "source_title": "Synthetic encounter 3",
+          "quote": "No completion documentation is available in the supplied records.",
+          "start": 116,
+          "end": 181,
+          "source_sha256": "a9f5e61d848af249eff66eac15b23099b205af3c4dc6282c3d07f5570637e885",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        },
+        "date_provenance": {
+          "origin": "supplied_metadata",
+          "quote": null,
+          "start": null,
+          "end": null
+        }
+      }
+    ],
+    "rejected": [],
+    "warnings": [
+      "Bounded prototype vocabulary; unrecognized language is not established as a patient fact."
+    ],
+    "records": [
+      {
+        "id": "visit1",
+        "date": "2026-10-03",
+        "title": "Synthetic encounter 1",
+        "text": "SYNTHETIC DEMONSTRATION RECORD\n\nPatient attended routine follow-up.\nType 2 diabetes is documented in the medical history.\nRetinal examination recommended.\nPatient advised to arrange appropriate follow-up.\n",
+        "synthetic": true,
+        "date_provenance": {
+          "origin": "supplied_metadata",
+          "quote": null,
+          "start": null,
+          "end": null
+        }
+      },
+      {
+        "id": "visit2",
+        "date": "2026-10-13",
+        "title": "Synthetic encounter 2",
+        "text": "SYNTHETIC DEMONSTRATION RECORD\n\nPatient attended follow-up encounter.\nPrevious retinal examination recommendation was discussed again.\nNo retinal examination result is available in the supplied records.\n",
+        "synthetic": true,
+        "date_provenance": {
+          "origin": "supplied_metadata",
+          "quote": null,
+          "start": null,
+          "end": null
+        }
+      },
+      {
+        "id": "visit3",
+        "date": "2026-10-24",
+        "title": "Synthetic encounter 3",
+        "text": "SYNTHETIC DEMONSTRATION RECORD\n\nPatient reports that the recommended retinal examination has not yet been arranged.\nNo completion documentation is available in the supplied records.\n",
+        "synthetic": true,
+        "date_provenance": {
+          "origin": "supplied_metadata",
+          "quote": null,
+          "start": null,
+          "end": null
+        }
+      }
+    ],
+    "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf"
+  },
+  "signals": {
+    "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+    "mode": "deterministic_rules",
+    "rule_version": "1.0",
+    "searched_source_ids": [
+      "visit1",
+      "visit2",
+      "visit3"
+    ],
+    "signals": [
+      {
+        "id": "sig_3b27843e1868d299",
+        "rule": "unresolved_instruction",
+        "concept": "retinal_exam",
+        "status": "open",
+        "title": "Retinal follow-up remains unverified",
+        "summary": "No validated later completion was found after the latest instruction in the supplied records. Missing documentation does not prove care did not occur.",
+        "evidence": [
+          {
+            "event_id": "evt_e3e946dc974358d1",
+            "date": "2026-10-03",
+            "evidence": {
+              "source_id": "visit1",
+              "source_title": "Synthetic encounter 1",
+              "quote": "Retinal examination recommended.",
+              "start": 122,
+              "end": 154,
+              "source_sha256": "2058654c8f3efb52dc800e5c37d665a1b82c727179a670ca887b18077d2987f0",
+              "validation": "exact_span_and_bounded_semantic_rule"
+            }
+          },
+          {
+            "event_id": "evt_3122ea2c4c64942e",
+            "date": "2026-10-13",
+            "evidence": {
+              "source_id": "visit2",
+              "source_title": "Synthetic encounter 2",
+              "quote": "Previous retinal examination recommendation was discussed again.",
+              "start": 70,
+              "end": 134,
+              "source_sha256": "7206cebe8ba0a5c03d49a72483a80a2eaa3f842467f6bc2f92e47ead123855d6",
+              "validation": "exact_span_and_bounded_semantic_rule"
+            }
+          },
+          {
+            "event_id": "evt_4eba79c7ea2656e7",
+            "date": "2026-10-13",
+            "evidence": {
+              "source_id": "visit2",
+              "source_title": "Synthetic encounter 2",
+              "quote": "No retinal examination result is available in the supplied records.",
+              "start": 135,
+              "end": 202,
+              "source_sha256": "7206cebe8ba0a5c03d49a72483a80a2eaa3f842467f6bc2f92e47ead123855d6",
+              "validation": "exact_span_and_bounded_semantic_rule"
+            }
+          },
+          {
+            "event_id": "evt_042c0b247ae15a8b",
+            "date": "2026-10-24",
+            "evidence": {
+              "source_id": "visit3",
+              "source_title": "Synthetic encounter 3",
+              "quote": "Patient reports that the recommended retinal examination has not yet been arranged.",
+              "start": 32,
+              "end": 115,
+              "source_sha256": "a9f5e61d848af249eff66eac15b23099b205af3c4dc6282c3d07f5570637e885",
+              "validation": "exact_span_and_bounded_semantic_rule"
+            }
+          },
+          {
+            "event_id": "evt_5c3ca12281966744",
+            "date": "2026-10-24",
+            "evidence": {
+              "source_id": "visit3",
+              "source_title": "Synthetic encounter 3",
+              "quote": "No completion documentation is available in the supplied records.",
+              "start": 116,
+              "end": 181,
+              "source_sha256": "a9f5e61d848af249eff66eac15b23099b205af3c4dc6282c3d07f5570637e885",
+              "validation": "exact_span_and_bounded_semantic_rule"
+            }
+          }
+        ],
+        "education_topic": "retina"
+      }
+    ],
+    "limitations": [
+      "Only validated events in the current supplied records are searched.",
+      "Unrecognized language can hide relevant information; review extraction warnings.",
+      "No diagnosis, urgency score, care action, or patient disease stage is inferred."
+    ],
+    "extraction_warnings": [
+      "Bounded prototype vocabulary; unrecognized language is not established as a patient fact."
+    ]
+  },
+  "education": {
+    "topic": "retina",
+    "version": "1.0",
+    "review_status": "source_checked_prototype_clinical_review_pending",
+    "disclaimer": "General educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.",
+    "progression_limit": "These four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+    "sources": [
+      {
+        "id": "nei_anatomy",
+        "title": "How the Eyes Work",
+        "publisher": "National Eye Institute, NIH",
+        "url": "https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work",
+        "checked_on": "2026-10-31"
+      },
+      {
+        "id": "nei_retinopathy",
+        "title": "Diabetic Retinopathy",
+        "publisher": "National Eye Institute, NIH",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/diabetic-retinopathy",
+        "checked_on": "2026-10-31"
+      },
+      {
+        "id": "cdc_vision",
+        "title": "Vision Loss and Diabetes",
+        "publisher": "Centers for Disease Control and Prevention",
+        "url": "https://www.cdc.gov/diabetes/diabetes-complications/diabetes-and-vision-loss.html",
+        "checked_on": "2026-10-31"
+      }
+    ],
+    "anatomy": [
+      {
+        "id": "retina",
+        "title": "Retina",
+        "text": "At the back of the eye, the retina turns incoming light into signals used for vision.",
+        "source_ids": [
+          "nei_anatomy"
+        ],
+        "scope": "general_education"
+      },
+      {
+        "id": "macula",
+        "title": "Macula",
+        "text": "The macula is the retinal area used for sharp central vision.",
+        "source_ids": [
+          "nei_retinopathy"
+        ],
+        "scope": "general_education"
+      },
+      {
+        "id": "blood_vessels",
+        "title": "Retinal blood vessels",
+        "text": "Diabetes can damage the small retinal vessels, affecting blood flow and allowing fluid or blood to escape.",
+        "source_ids": [
+          "nei_retinopathy"
+        ],
+        "scope": "general_education"
+      },
+      {
+        "id": "optic_nerve",
+        "title": "Optic nerve",
+        "text": "Signals from the retina travel along the optic nerve to the brain.",
+        "source_ids": [
+          "nei_anatomy"
+        ],
+        "scope": "general_education"
+      },
+      {
+        "id": "cornea",
+        "title": "Cornea",
+        "text": "The clear front surface bends incoming light to help focus it.",
+        "source_ids": [
+          "nei_anatomy"
+        ],
+        "scope": "general_education"
+      },
+      {
+        "id": "lens",
+        "title": "Lens",
+        "text": "Inside the eye, the lens helps focus light onto the retina.",
+        "source_ids": [
+          "nei_anatomy"
+        ],
+        "scope": "general_education"
+      }
+    ],
+    "follow_up": {
+      "id": "follow_up",
+      "title": "Why follow-up matters",
+      "text": "Diabetes-related retinal changes can begin without noticeable symptoms. A dilated eye examination lets an eye professional check the retina. A record reminder is a reason to clarify documented follow-up, not evidence that someone has retinal disease.",
+      "source_ids": [
+        "nei_retinopathy"
+      ],
+      "scope": "general_education"
+    },
+    "states": [
+      {
+        "id": "normal",
+        "title": "Normal educational view",
+        "text": "This reference view introduces retinal anatomy and visual signalling. It does not establish that a particular person's eyes are healthy.",
+        "source_ids": [
+          "nei_anatomy"
+        ],
+        "scope": "general_education",
+        "anatomy_focus": [
+          "retina",
+          "macula",
+          "blood_vessels",
+          "optic_nerve"
+        ]
+      },
+      {
+        "id": "early",
+        "title": "General early changes",
+        "text": "In early diabetic retinopathy, small vessel walls may weaken and bulge. People may not notice symptoms.",
+        "source_ids": [
+          "cdc_vision"
+        ],
+        "scope": "general_education",
+        "anatomy_focus": [
+          "blood_vessels"
+        ]
+      },
+      {
+        "id": "progressing",
+        "title": "General progressing changes",
+        "text": "Fluid leaking from damaged vessels can cause swelling in the macula and affect central vision. This example is not a separate formal disease stage.",
+        "source_ids": [
+          "nei_retinopathy"
+        ],
+        "scope": "general_education",
+        "anatomy_focus": [
+          "blood_vessels",
+          "macula"
+        ]
+      },
+      {
+        "id": "advanced",
+        "title": "General advanced changes",
+        "text": "Advanced proliferative disease can involve fragile new vessels that bleed. This is a general example, not a forecast for any patient.",
+        "source_ids": [
+          "cdc_vision"
+        ],
+        "scope": "general_education",
+        "anatomy_focus": [
+          "blood_vessels",
+          "retina"
+        ]
+      }
+    ]
+  },
+  "voice": {
+    "topic": "patient_facts",
+    "state": null,
+    "mode": "allowlisted_scripts",
+    "approval": "prototype_allowlist_not_clinical_approval",
+    "refused": false,
+    "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+    "segments": [
+      {
+        "scope": "limitation",
+        "text": "These are statements from the supplied synthetic records, not independently verified diagnoses or care status.",
+        "source_ids": [],
+        "event_ids": []
+      },
+      {
+        "scope": "patient_record",
+        "text": "Record dated 2026-10-03: Type 2 diabetes documented in the supplied record. Source says: Type 2 diabetes is documented in the medical history.",
+        "source_ids": [],
+        "event_ids": [
+          "evt_9082ee4eb5ccfc0b"
+        ]
+      },
+      {
+        "scope": "patient_record",
+        "text": "Record dated 2026-10-03: Retinal examination follow-up recommended or discussed. Source says: Retinal examination recommended.",
+        "source_ids": [],
+        "event_ids": [
+          "evt_e3e946dc974358d1"
+        ]
+      },
+      {
+        "scope": "patient_record",
+        "text": "Record dated 2026-10-13: Retinal examination follow-up recommended or discussed. Source says: Previous retinal examination recommendation was discussed again.",
+        "source_ids": [],
+        "event_ids": [
+          "evt_3122ea2c4c64942e"
+        ]
+      },
+      {
+        "scope": "patient_record",
+        "text": "Record dated 2026-10-13: Record reports follow-up unarranged or completion undocumented. Source says: No retinal examination result is available in the supplied records.",
+        "source_ids": [],
+        "event_ids": [
+          "evt_4eba79c7ea2656e7"
+        ]
+      },
+      {
+        "scope": "patient_record",
+        "text": "Record dated 2026-10-24: Record reports follow-up unarranged or completion undocumented. Source says: Patient reports that the recommended retinal examination has not yet been arranged.",
+        "source_ids": [],
+        "event_ids": [
+          "evt_042c0b247ae15a8b"
+        ]
+      },
+      {
+        "scope": "patient_record",
+        "text": "Record dated 2026-10-24: Record reports follow-up unarranged or completion undocumented. Source says: No completion documentation is available in the supplied records.",
+        "source_ids": [],
+        "event_ids": [
+          "evt_5c3ca12281966744"
+        ]
+      }
+    ],
+    "transcript": "These are statements from the supplied synthetic records, not independently verified diagnoses or care status.\n\nRecord dated 2026-10-03: Type 2 diabetes documented in the supplied record. Source says: Type 2 diabetes is documented in the medical history.\n\nRecord dated 2026-10-03: Retinal examination follow-up recommended or discussed. Source says: Retinal examination recommended.\n\nRecord dated 2026-10-13: Retinal examination follow-up recommended or discussed. Source says: Previous retinal examination recommendation was discussed again.\n\nRecord dated 2026-10-13: Record reports follow-up unarranged or completion undocumented. Source says: No retinal examination result is available in the supplied records.\n\nRecord dated 2026-10-24: Record reports follow-up unarranged or completion undocumented. Source says: Patient reports that the recommended retinal examination has not yet been arranged.\n\nRecord dated 2026-10-24: Record reports follow-up unarranged or completion undocumented. Source says: No completion documentation is available in the supplied records.",
+    "sources": [],
+    "evidence": [
+      {
+        "event_id": "evt_9082ee4eb5ccfc0b",
+        "date": "2026-10-03",
+        "evidence": {
+          "source_id": "visit1",
+          "source_title": "Synthetic encounter 1",
+          "quote": "Type 2 diabetes is documented in the medical history.",
+          "start": 68,
+          "end": 121,
+          "source_sha256": "2058654c8f3efb52dc800e5c37d665a1b82c727179a670ca887b18077d2987f0",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        }
+      },
+      {
+        "event_id": "evt_e3e946dc974358d1",
+        "date": "2026-10-03",
+        "evidence": {
+          "source_id": "visit1",
+          "source_title": "Synthetic encounter 1",
+          "quote": "Retinal examination recommended.",
+          "start": 122,
+          "end": 154,
+          "source_sha256": "2058654c8f3efb52dc800e5c37d665a1b82c727179a670ca887b18077d2987f0",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        }
+      },
+      {
+        "event_id": "evt_3122ea2c4c64942e",
+        "date": "2026-10-13",
+        "evidence": {
+          "source_id": "visit2",
+          "source_title": "Synthetic encounter 2",
+          "quote": "Previous retinal examination recommendation was discussed again.",
+          "start": 70,
+          "end": 134,
+          "source_sha256": "7206cebe8ba0a5c03d49a72483a80a2eaa3f842467f6bc2f92e47ead123855d6",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        }
+      },
+      {
+        "event_id": "evt_4eba79c7ea2656e7",
+        "date": "2026-10-13",
+        "evidence": {
+          "source_id": "visit2",
+          "source_title": "Synthetic encounter 2",
+          "quote": "No retinal examination result is available in the supplied records.",
+          "start": 135,
+          "end": 202,
+          "source_sha256": "7206cebe8ba0a5c03d49a72483a80a2eaa3f842467f6bc2f92e47ead123855d6",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        }
+      },
+      {
+        "event_id": "evt_042c0b247ae15a8b",
+        "date": "2026-10-24",
+        "evidence": {
+          "source_id": "visit3",
+          "source_title": "Synthetic encounter 3",
+          "quote": "Patient reports that the recommended retinal examination has not yet been arranged.",
+          "start": 32,
+          "end": 115,
+          "source_sha256": "a9f5e61d848af249eff66eac15b23099b205af3c4dc6282c3d07f5570637e885",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        }
+      },
+      {
+        "event_id": "evt_5c3ca12281966744",
+        "date": "2026-10-24",
+        "evidence": {
+          "source_id": "visit3",
+          "source_title": "Synthetic encounter 3",
+          "quote": "No completion documentation is available in the supplied records.",
+          "start": 116,
+          "end": 181,
+          "source_sha256": "a9f5e61d848af249eff66eac15b23099b205af3c4dc6282c3d07f5570637e885",
+          "validation": "exact_span_and_bounded_semantic_rule"
+        }
+      }
+    ],
+    "audio_available": false
+  },
+  "resources": {
+    "version": "1.0",
+    "resources": [
+      {
+        "id": "uhn_eye_existing_referral",
+        "name": "UHN Comprehensive Ophthalmology Unit: existing-referral pathway",
+        "kind": "clinic",
+        "jurisdiction": [
+          "Ontario"
+        ],
+        "location": "Toronto, Ontario; confirm the specific clinic location with UHN",
+        "delivery": "in_person",
+        "purpose": "Review an already-established referral with the clinic or referring care team. This is not a new referral or a screening recommendation.",
+        "eligibility": "Prototype selection requires an existing referral to this specific clinic confirmed by the synthetic scenario user. UHN must confirm acceptance and suitability.",
+        "requires_existing_referral": true,
+        "languages": [],
+        "accessibility": [],
+        "requires_phone": false,
+        "source_urls": [
+          "https://www.uhn.ca/Krembil/Clinics/Comprehensive_Ophthalmology",
+          "https://www.uhn.ca/Krembil/DKJ-Eye-Institute/Pages/clinics-and-services.aspx"
+        ],
+        "verified_on": "2026-11-01",
+        "review_due": "2027-01-30",
+        "verification_note": "Official UHN pages establish the unit and describe clinic visits. Existing-referral gating is a conservative prototype policy, not a claim that every patient qualifies.",
+        "limitations": [
+          "The supplied Amina notes do not establish a UHN referral.",
+          "Clinic language, step-free access, appointment availability and costs were not verified; do not infer them.",
+          "In-person pathway excluded when the user cannot travel. Contacting a clinic does not mean care occurred."
+        ]
+      },
+      {
+        "id": "ontario_health811",
+        "name": "Ontario Health811: remote navigation",
+        "kind": "navigation",
+        "jurisdiction": [
+          "Ontario"
+        ],
+        "location": "Remote service for people in Ontario",
+        "delivery": "remote",
+        "purpose": "Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination.",
+        "eligibility": "Ontario navigation service; individual service access and interpretation arrangements should be confirmed directly.",
+        "requires_existing_referral": false,
+        "languages": [
+          "en",
+          "fr"
+        ],
+        "accessibility": [
+          "tty"
+        ],
+        "requires_phone": true,
+        "source_urls": [
+          "https://www.ontario.ca/page/your-health",
+          "https://ontariohealth.ca/news/health811-resources-help-providers-support-patients-in-accessing"
+        ],
+        "verified_on": "2026-11-01",
+        "review_due": "2027-01-30",
+        "verification_note": "Official Ontario/ Ontario Health indexed content confirms telephone navigation, English/French support and TTY access. Full-page retrieval was blocked; this review used the official indexed excerpts. Other specific language support is not assumed.",
+        "limitations": [
+          "Navigation alternative only; not an equivalent substitute for an eye exam.",
+          "Wait times, individual eligibility and availability are not guaranteed.",
+          "Only English/French and TTY are encoded; unknown requested capabilities fail closed."
+        ]
+      },
+      {
+        "id": "ontario_optometrist_register",
+        "name": "College of Optometrists of Ontario: public register",
+        "kind": "directory",
+        "jurisdiction": [
+          "Ontario"
+        ],
+        "location": "Online Ontario public register",
+        "delivery": "remote",
+        "purpose": "Look up registration and practice information for an optometrist. Confirm examination services and access directly with the practice.",
+        "eligibility": "Public information lookup; being listed is not confirmation of availability or eligibility for a particular service.",
+        "requires_existing_referral": false,
+        "languages": [],
+        "accessibility": [],
+        "requires_phone": false,
+        "source_urls": [
+          "https://collegeoptom.on.ca/public/",
+          "https://collegeoptom.on.ca/cgcpt-quicklinks/find-an-optometrist/"
+        ],
+        "verified_on": "2026-11-01",
+        "review_due": "2027-01-30",
+        "verification_note": "Official College pages describe the public register and registration/practice information. The prototype does not scrape or select individual practitioners.",
+        "limitations": [
+          "Directory only, not a booked service or a medical recommendation.",
+          "Specific languages, accessibility, prices and appointment availability are unknown."
+        ]
+      }
+    ],
+    "disclaimer": "Curated navigation information checked against official sources. A match is not confirmation of eligibility, availability, clinical suitability or an appointment. No service is contacted by this prototype."
+  },
+  "planA": {
+    "id": "plan_13235979ea264e5f982802a001c0f5de",
+    "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+    "signal_id": "sig_3b27843e1868d299",
+    "constraints": {
+      "jurisdiction": "Ontario",
+      "travel": "any",
+      "language": "any",
+      "accessibility": "none",
+      "phone_available": true,
+      "existing_referral_confirmed": true
+    },
+    "registry_digest": "674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024",
+    "created_at": "2026-11-12T12:00:00Z",
+    "active": true,
+    "mode": "deterministic_navigation",
+    "status": "proposed",
+    "selected": {
+      "id": "uhn_eye_existing_referral",
+      "name": "UHN Comprehensive Ophthalmology Unit: existing-referral pathway",
+      "kind": "clinic",
+      "jurisdiction": [
+        "Ontario"
+      ],
+      "location": "Toronto, Ontario; confirm the specific clinic location with UHN",
+      "delivery": "in_person",
+      "purpose": "Review an already-established referral with the clinic or referring care team. This is not a new referral or a screening recommendation.",
+      "eligibility": "Prototype selection requires an existing referral to this specific clinic confirmed by the synthetic scenario user. UHN must confirm acceptance and suitability.",
+      "requires_existing_referral": true,
+      "languages": [],
+      "accessibility": [],
+      "requires_phone": false,
+      "source_urls": [
+        "https://www.uhn.ca/Krembil/Clinics/Comprehensive_Ophthalmology",
+        "https://www.uhn.ca/Krembil/DKJ-Eye-Institute/Pages/clinics-and-services.aspx"
+      ],
+      "verified_on": "2026-11-01",
+      "review_due": "2027-01-30",
+      "verification_note": "Official UHN pages establish the unit and describe clinic visits. Existing-referral gating is a conservative prototype policy, not a claim that every patient qualifies.",
+      "limitations": [
+        "The supplied Amina notes do not establish a UHN referral.",
+        "Clinic language, step-free access, appointment availability and costs were not verified; do not infer them.",
+        "In-person pathway excluded when the user cannot travel. Contacting a clinic does not mean care occurred."
+      ]
+    },
+    "evaluations": [
+      {
+        "resource_id": "uhn_eye_existing_referral",
+        "eligible": true,
+        "reasons": []
+      }
+    ],
+    "steps": [
+      {
+        "stage": "checking_resource",
+        "resource_id": "uhn_eye_existing_referral",
+        "message": "Checking the curated resource and review date."
+      },
+      {
+        "stage": "checking_constraints",
+        "resource_id": "uhn_eye_existing_referral",
+        "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access."
+      },
+      {
+        "stage": "selected",
+        "resource_id": "uhn_eye_existing_referral",
+        "message": "Matches the declared navigation constraints; confirm service eligibility directly."
+      }
+    ],
+    "limitations": [
+      "Curated navigation information checked against official sources. A match is not confirmation of eligibility, availability, clinical suitability or an appointment. No service is contacted by this prototype.",
+      "Fixed registry order is a demonstration policy, not clinical ranking.",
+      "Remote navigation does not replace an in-person examination.",
+      "Replanning invalidates old approvals. Previously imported calendar files cannot be recalled."
+    ]
+  },
+  "planB": {
+    "id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+    "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+    "signal_id": "sig_3b27843e1868d299",
+    "constraints": {
+      "jurisdiction": "Ontario",
+      "travel": "cannot_travel",
+      "language": "any",
+      "accessibility": "none",
+      "phone_available": true,
+      "existing_referral_confirmed": true
+    },
+    "registry_digest": "674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024",
+    "created_at": "2026-11-12T12:00:00Z",
+    "active": true,
+    "mode": "deterministic_navigation",
+    "status": "proposed",
+    "selected": {
+      "id": "ontario_health811",
+      "name": "Ontario Health811: remote navigation",
+      "kind": "navigation",
+      "jurisdiction": [
+        "Ontario"
+      ],
+      "location": "Remote service for people in Ontario",
+      "delivery": "remote",
+      "purpose": "Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination.",
+      "eligibility": "Ontario navigation service; individual service access and interpretation arrangements should be confirmed directly.",
+      "requires_existing_referral": false,
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "accessibility": [
+        "tty"
+      ],
+      "requires_phone": true,
+      "source_urls": [
+        "https://www.ontario.ca/page/your-health",
+        "https://ontariohealth.ca/news/health811-resources-help-providers-support-patients-in-accessing"
+      ],
+      "verified_on": "2026-11-01",
+      "review_due": "2027-01-30",
+      "verification_note": "Official Ontario/ Ontario Health indexed content confirms telephone navigation, English/French support and TTY access. Full-page retrieval was blocked; this review used the official indexed excerpts. Other specific language support is not assumed.",
+      "limitations": [
+        "Navigation alternative only; not an equivalent substitute for an eye exam.",
+        "Wait times, individual eligibility and availability are not guaranteed.",
+        "Only English/French and TTY are encoded; unknown requested capabilities fail closed."
+      ]
+    },
+    "evaluations": [
+      {
+        "resource_id": "uhn_eye_existing_referral",
+        "eligible": false,
+        "reasons": [
+          "in_person_pathway_conflicts_with_travel_constraint"
+        ]
+      },
+      {
+        "resource_id": "ontario_health811",
+        "eligible": true,
+        "reasons": []
+      }
+    ],
+    "steps": [
+      {
+        "stage": "checking_resource",
+        "resource_id": "uhn_eye_existing_referral",
+        "message": "Checking the curated resource and review date."
+      },
+      {
+        "stage": "checking_constraints",
+        "resource_id": "uhn_eye_existing_referral",
+        "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access."
+      },
+      {
+        "stage": "rejected",
+        "resource_id": "uhn_eye_existing_referral",
+        "message": "in_person_pathway_conflicts_with_travel_constraint"
+      },
+      {
+        "stage": "searching_alternative",
+        "resource_id": null,
+        "message": "Searching the remaining curated options."
+      },
+      {
+        "stage": "checking_resource",
+        "resource_id": "ontario_health811",
+        "message": "Checking the curated resource and review date."
+      },
+      {
+        "stage": "checking_constraints",
+        "resource_id": "ontario_health811",
+        "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access."
+      },
+      {
+        "stage": "selected",
+        "resource_id": "ontario_health811",
+        "message": "Matches the declared navigation constraints; confirm service eligibility directly."
+      }
+    ],
+    "limitations": [
+      "Curated navigation information checked against official sources. A match is not confirmation of eligibility, availability, clinical suitability or an appointment. No service is contacted by this prototype.",
+      "Fixed registry order is a demonstration policy, not clinical ranking.",
+      "Remote navigation does not replace an in-person examination.",
+      "Replanning invalidates old approvals. Previously imported calendar files cannot be recalled."
+    ]
+  },
+  "proposed": {
+    "id": "act_01729cbd2ec24975a1698a672510b184",
+    "plan_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+    "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+    "registry_digest": "674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024",
+    "resource": {
+      "id": "ontario_health811",
+      "name": "Ontario Health811: remote navigation",
+      "kind": "navigation",
+      "jurisdiction": [
+        "Ontario"
+      ],
+      "location": "Remote service for people in Ontario",
+      "delivery": "remote",
+      "purpose": "Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination.",
+      "eligibility": "Ontario navigation service; individual service access and interpretation arrangements should be confirmed directly.",
+      "requires_existing_referral": false,
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "accessibility": [
+        "tty"
+      ],
+      "requires_phone": true,
+      "source_urls": [
+        "https://www.ontario.ca/page/your-health",
+        "https://ontariohealth.ca/news/health811-resources-help-providers-support-patients-in-accessing"
+      ],
+      "verified_on": "2026-11-01",
+      "review_due": "2027-01-30",
+      "verification_note": "Official Ontario/ Ontario Health indexed content confirms telephone navigation, English/French support and TTY access. Full-page retrieval was blocked; this review used the official indexed excerpts. Other specific language support is not assumed.",
+      "limitations": [
+        "Navigation alternative only; not an equivalent substitute for an eye exam.",
+        "Wait times, individual eligibility and availability are not guaranteed.",
+        "Only English/French and TTY are encoded; unknown requested capabilities fail closed."
+      ]
+    },
+    "reminder_date": "2026-11-13",
+    "summary": "CareRelay synthetic follow-up reminder - not an appointment",
+    "description": "Synthetic demonstration. Review the documented retinal examination recommendation and clarify next steps with an appropriate care team. Navigation resource: Ontario Health811: remote navigation. Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination. Source: https://www.ontario.ca/page/your-health This is an administrative reminder only: no appointment is booked and no care completion is established.",
+    "status": "proposed",
+    "created_at": "2026-11-12T12:00:00Z",
+    "approved_at": null,
+    "calendar_generated_at": null,
+    "invalidation_reason": null,
+    "is_appointment": false,
+    "care_completed": false,
+    "completion": null
+  },
+  "approval_gate_status": 403,
+  "approved": {
+    "id": "act_01729cbd2ec24975a1698a672510b184",
+    "plan_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+    "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+    "registry_digest": "674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024",
+    "resource": {
+      "id": "ontario_health811",
+      "name": "Ontario Health811: remote navigation",
+      "kind": "navigation",
+      "jurisdiction": [
+        "Ontario"
+      ],
+      "location": "Remote service for people in Ontario",
+      "delivery": "remote",
+      "purpose": "Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination.",
+      "eligibility": "Ontario navigation service; individual service access and interpretation arrangements should be confirmed directly.",
+      "requires_existing_referral": false,
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "accessibility": [
+        "tty"
+      ],
+      "requires_phone": true,
+      "source_urls": [
+        "https://www.ontario.ca/page/your-health",
+        "https://ontariohealth.ca/news/health811-resources-help-providers-support-patients-in-accessing"
+      ],
+      "verified_on": "2026-11-01",
+      "review_due": "2027-01-30",
+      "verification_note": "Official Ontario/ Ontario Health indexed content confirms telephone navigation, English/French support and TTY access. Full-page retrieval was blocked; this review used the official indexed excerpts. Other specific language support is not assumed.",
+      "limitations": [
+        "Navigation alternative only; not an equivalent substitute for an eye exam.",
+        "Wait times, individual eligibility and availability are not guaranteed.",
+        "Only English/French and TTY are encoded; unknown requested capabilities fail closed."
+      ]
+    },
+    "reminder_date": "2026-11-13",
+    "summary": "CareRelay synthetic follow-up reminder - not an appointment",
+    "description": "Synthetic demonstration. Review the documented retinal examination recommendation and clarify next steps with an appropriate care team. Navigation resource: Ontario Health811: remote navigation. Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination. Source: https://www.ontario.ca/page/your-health This is an administrative reminder only: no appointment is booked and no care completion is established.",
+    "status": "approved",
+    "created_at": "2026-11-12T12:00:00Z",
+    "approved_at": "2026-11-12T12:00:00Z",
+    "calendar_generated_at": null,
+    "invalidation_reason": null,
+    "is_appointment": false,
+    "care_completed": false,
+    "completion": null
+  },
+  "calendar_sha256": "2567e0d760c13a607d6998aa19e48d882ae3caf8d61a7d303547be5bfe0a4225",
+  "awaiting": {
+    "id": "act_01729cbd2ec24975a1698a672510b184",
+    "plan_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+    "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+    "registry_digest": "674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024",
+    "resource": {
+      "id": "ontario_health811",
+      "name": "Ontario Health811: remote navigation",
+      "kind": "navigation",
+      "jurisdiction": [
+        "Ontario"
+      ],
+      "location": "Remote service for people in Ontario",
+      "delivery": "remote",
+      "purpose": "Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination.",
+      "eligibility": "Ontario navigation service; individual service access and interpretation arrangements should be confirmed directly.",
+      "requires_existing_referral": false,
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "accessibility": [
+        "tty"
+      ],
+      "requires_phone": true,
+      "source_urls": [
+        "https://www.ontario.ca/page/your-health",
+        "https://ontariohealth.ca/news/health811-resources-help-providers-support-patients-in-accessing"
+      ],
+      "verified_on": "2026-11-01",
+      "review_due": "2027-01-30",
+      "verification_note": "Official Ontario/ Ontario Health indexed content confirms telephone navigation, English/French support and TTY access. Full-page retrieval was blocked; this review used the official indexed excerpts. Other specific language support is not assumed.",
+      "limitations": [
+        "Navigation alternative only; not an equivalent substitute for an eye exam.",
+        "Wait times, individual eligibility and availability are not guaranteed.",
+        "Only English/French and TTY are encoded; unknown requested capabilities fail closed."
+      ]
+    },
+    "reminder_date": "2026-11-13",
+    "summary": "CareRelay synthetic follow-up reminder - not an appointment",
+    "description": "Synthetic demonstration. Review the documented retinal examination recommendation and clarify next steps with an appropriate care team. Navigation resource: Ontario Health811: remote navigation. Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination. Source: https://www.ontario.ca/page/your-health This is an administrative reminder only: no appointment is booked and no care completion is established.",
+    "status": "awaiting_confirmation",
+    "created_at": "2026-11-12T12:00:00Z",
+    "approved_at": "2026-11-12T12:00:00Z",
+    "calendar_generated_at": "2026-11-12T12:00:00Z",
+    "invalidation_reason": null,
+    "is_appointment": false,
+    "care_completed": false,
+    "completion": null
+  },
+  "completed": {
+    "id": "act_01729cbd2ec24975a1698a672510b184",
+    "plan_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+    "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+    "registry_digest": "674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024",
+    "resource": {
+      "id": "ontario_health811",
+      "name": "Ontario Health811: remote navigation",
+      "kind": "navigation",
+      "jurisdiction": [
+        "Ontario"
+      ],
+      "location": "Remote service for people in Ontario",
+      "delivery": "remote",
+      "purpose": "Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination.",
+      "eligibility": "Ontario navigation service; individual service access and interpretation arrangements should be confirmed directly.",
+      "requires_existing_referral": false,
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "accessibility": [
+        "tty"
+      ],
+      "requires_phone": true,
+      "source_urls": [
+        "https://www.ontario.ca/page/your-health",
+        "https://ontariohealth.ca/news/health811-resources-help-providers-support-patients-in-accessing"
+      ],
+      "verified_on": "2026-11-01",
+      "review_due": "2027-01-30",
+      "verification_note": "Official Ontario/ Ontario Health indexed content confirms telephone navigation, English/French support and TTY access. Full-page retrieval was blocked; this review used the official indexed excerpts. Other specific language support is not assumed.",
+      "limitations": [
+        "Navigation alternative only; not an equivalent substitute for an eye exam.",
+        "Wait times, individual eligibility and availability are not guaranteed.",
+        "Only English/French and TTY are encoded; unknown requested capabilities fail closed."
+      ]
+    },
+    "reminder_date": "2026-11-13",
+    "summary": "CareRelay synthetic follow-up reminder - not an appointment",
+    "description": "Synthetic demonstration. Review the documented retinal examination recommendation and clarify next steps with an appropriate care team. Navigation resource: Ontario Health811: remote navigation. Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination. Source: https://www.ontario.ca/page/your-health This is an administrative reminder only: no appointment is booked and no care completion is established.",
+    "status": "completed",
+    "created_at": "2026-11-12T12:00:00Z",
+    "approved_at": "2026-11-12T12:00:00Z",
+    "calendar_generated_at": "2026-11-12T12:00:00Z",
+    "invalidation_reason": null,
+    "is_appointment": false,
+    "care_completed": false,
+    "completion": {
+      "completed_on": "2026-11-12",
+      "reported_by": "patient",
+      "confirmed_at": "2026-11-12T12:00:00Z",
+      "basis": "explicit_unverified_report",
+      "clinically_verified": false
+    }
+  },
+  "audit": {
+    "events": [
+      {
+        "sequence": 1,
+        "created_at": "2026-11-05T04:35:49.700549Z",
+        "entity_type": "system",
+        "entity_id": "amina",
+        "event_type": "audit_started",
+        "from_status": null,
+        "to_status": null,
+        "revision": null,
+        "details": {
+          "legacy_history_available": false
+        }
+      },
+      {
+        "sequence": 2,
+        "created_at": "2026-11-05T04:35:49.742428Z",
+        "entity_type": "analysis",
+        "entity_id": "amina",
+        "event_type": "analysis_saved",
+        "from_status": null,
+        "to_status": "analyzed",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "event_count": 6,
+          "mode": "deterministic_demo",
+          "previous_revision": null
+        }
+      },
+      {
+        "sequence": 3,
+        "created_at": "2026-11-05T04:35:49.773490Z",
+        "entity_type": "plan",
+        "entity_id": "plan_13235979ea264e5f982802a001c0f5de",
+        "event_type": "plan_created",
+        "from_status": null,
+        "to_status": "proposed",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "constraints": {
+            "accessibility": "none",
+            "existing_referral_confirmed": true,
+            "jurisdiction": "Ontario",
+            "language": "any",
+            "phone_available": true,
+            "travel": "any"
+          },
+          "registry_digest": "674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024",
+          "signal_id": "sig_3b27843e1868d299"
+        }
+      },
+      {
+        "sequence": 4,
+        "created_at": "2026-11-05T04:35:49.773490Z",
+        "entity_type": "plan",
+        "entity_id": "plan_13235979ea264e5f982802a001c0f5de",
+        "event_type": "plan_step",
+        "from_status": null,
+        "to_status": "checking_resource",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "message": "Checking the curated resource and review date.",
+          "resource_id": "uhn_eye_existing_referral"
+        }
+      },
+      {
+        "sequence": 5,
+        "created_at": "2026-11-05T04:35:49.773490Z",
+        "entity_type": "plan",
+        "entity_id": "plan_13235979ea264e5f982802a001c0f5de",
+        "event_type": "plan_step",
+        "from_status": "checking_resource",
+        "to_status": "checking_constraints",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access.",
+          "resource_id": "uhn_eye_existing_referral"
+        }
+      },
+      {
+        "sequence": 6,
+        "created_at": "2026-11-05T04:35:49.773490Z",
+        "entity_type": "plan",
+        "entity_id": "plan_13235979ea264e5f982802a001c0f5de",
+        "event_type": "plan_step",
+        "from_status": "checking_constraints",
+        "to_status": "selected",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "message": "Matches the declared navigation constraints; confirm service eligibility directly.",
+          "resource_id": "uhn_eye_existing_referral"
+        }
+      },
+      {
+        "sequence": 7,
+        "created_at": "2026-11-05T04:35:49.773490Z",
+        "entity_type": "plan",
+        "entity_id": "plan_13235979ea264e5f982802a001c0f5de",
+        "event_type": "plan_invalidated",
+        "from_status": "proposed",
+        "to_status": "inactive",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "reason": "replanned"
+        }
+      },
+      {
+        "sequence": 8,
+        "created_at": "2026-11-05T04:35:49.780675Z",
+        "entity_type": "plan",
+        "entity_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+        "event_type": "plan_created",
+        "from_status": null,
+        "to_status": "proposed",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "constraints": {
+            "accessibility": "none",
+            "existing_referral_confirmed": true,
+            "jurisdiction": "Ontario",
+            "language": "any",
+            "phone_available": true,
+            "travel": "cannot_travel"
+          },
+          "registry_digest": "674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024",
+          "signal_id": "sig_3b27843e1868d299"
+        }
+      },
+      {
+        "sequence": 9,
+        "created_at": "2026-11-05T04:35:49.780675Z",
+        "entity_type": "plan",
+        "entity_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+        "event_type": "plan_step",
+        "from_status": null,
+        "to_status": "checking_resource",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "message": "Checking the curated resource and review date.",
+          "resource_id": "uhn_eye_existing_referral"
+        }
+      },
+      {
+        "sequence": 10,
+        "created_at": "2026-11-05T04:35:49.780675Z",
+        "entity_type": "plan",
+        "entity_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+        "event_type": "plan_step",
+        "from_status": "checking_resource",
+        "to_status": "checking_constraints",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access.",
+          "resource_id": "uhn_eye_existing_referral"
+        }
+      },
+      {
+        "sequence": 11,
+        "created_at": "2026-11-05T04:35:49.780675Z",
+        "entity_type": "plan",
+        "entity_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+        "event_type": "plan_step",
+        "from_status": "checking_constraints",
+        "to_status": "rejected",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "message": "in_person_pathway_conflicts_with_travel_constraint",
+          "resource_id": "uhn_eye_existing_referral"
+        }
+      },
+      {
+        "sequence": 12,
+        "created_at": "2026-11-05T04:35:49.780675Z",
+        "entity_type": "plan",
+        "entity_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+        "event_type": "plan_step",
+        "from_status": "rejected",
+        "to_status": "searching_alternative",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "message": "Searching the remaining curated options.",
+          "resource_id": null
+        }
+      },
+      {
+        "sequence": 13,
+        "created_at": "2026-11-05T04:35:49.780675Z",
+        "entity_type": "plan",
+        "entity_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+        "event_type": "plan_step",
+        "from_status": "searching_alternative",
+        "to_status": "checking_resource",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "message": "Checking the curated resource and review date.",
+          "resource_id": "ontario_health811"
+        }
+      },
+      {
+        "sequence": 14,
+        "created_at": "2026-11-05T04:35:49.780675Z",
+        "entity_type": "plan",
+        "entity_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+        "event_type": "plan_step",
+        "from_status": "checking_resource",
+        "to_status": "checking_constraints",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access.",
+          "resource_id": "ontario_health811"
+        }
+      },
+      {
+        "sequence": 15,
+        "created_at": "2026-11-05T04:35:49.780675Z",
+        "entity_type": "plan",
+        "entity_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+        "event_type": "plan_step",
+        "from_status": "checking_constraints",
+        "to_status": "selected",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "message": "Matches the declared navigation constraints; confirm service eligibility directly.",
+          "resource_id": "ontario_health811"
+        }
+      },
+      {
+        "sequence": 16,
+        "created_at": "2026-11-05T04:35:49.789479Z",
+        "entity_type": "action",
+        "entity_id": "act_01729cbd2ec24975a1698a672510b184",
+        "event_type": "action_proposed",
+        "from_status": null,
+        "to_status": "proposed",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "plan_id": "plan_f102282c334a4b179c9b7aad2e38a6a4",
+          "reminder_date": "2026-11-13",
+          "resource_id": "ontario_health811"
+        }
+      },
+      {
+        "sequence": 17,
+        "created_at": "2026-11-05T04:35:49.800183Z",
+        "entity_type": "action",
+        "entity_id": "act_01729cbd2ec24975a1698a672510b184",
+        "event_type": "action_approved",
+        "from_status": "proposed",
+        "to_status": "approved",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "explicit_approval": true
+        }
+      },
+      {
+        "sequence": 18,
+        "created_at": "2026-11-05T04:35:49.807868Z",
+        "entity_type": "action",
+        "entity_id": "act_01729cbd2ec24975a1698a672510b184",
+        "event_type": "calendar_generated",
+        "from_status": "approved",
+        "to_status": "awaiting_confirmation",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "calendar_import_verified": false,
+          "care_completed": false
+        }
+      },
+      {
+        "sequence": 19,
+        "created_at": "2026-11-05T04:35:49.817328Z",
+        "entity_type": "action",
+        "entity_id": "act_01729cbd2ec24975a1698a672510b184",
+        "event_type": "completion_reported",
+        "from_status": "awaiting_confirmation",
+        "to_status": "completed",
+        "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+        "details": {
+          "basis": "explicit_unverified_report",
+          "clinically_verified": false,
+          "completed_on": "2026-11-12",
+          "confirmed_at": "2026-11-12T12:00:00Z",
+          "reported_by": "patient"
+        }
+      }
+    ],
+    "next_cursor": null,
+    "limitation": "Local append-only history of successful changes, not an authenticated or tamper-proof medical audit. Legacy snapshots do not reconstruct events before audit logging was installed."
+  },
+  "no_match": {
+    "id": "plan_dea178df5e5c4ce79f613a1265d6906b",
+    "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+    "signal_id": "sig_3b27843e1868d299",
+    "constraints": {
+      "jurisdiction": "Ontario",
+      "travel": "cannot_travel",
+      "language": "any",
+      "accessibility": "step_free",
+      "phone_available": true,
+      "existing_referral_confirmed": true
+    },
+    "registry_digest": "674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024",
+    "created_at": "2026-11-12T12:00:00Z",
+    "active": true,
+    "mode": "deterministic_navigation",
+    "status": "no_verified_match",
+    "selected": null,
+    "evaluations": [
+      {
+        "resource_id": "uhn_eye_existing_referral",
+        "eligible": false,
+        "reasons": [
+          "in_person_pathway_conflicts_with_travel_constraint",
+          "requested_accessibility_not_verified"
+        ]
+      },
+      {
+        "resource_id": "ontario_health811",
+        "eligible": false,
+        "reasons": [
+          "requested_accessibility_not_verified"
+        ]
+      },
+      {
+        "resource_id": "ontario_optometrist_register",
+        "eligible": false,
+        "reasons": [
+          "requested_accessibility_not_verified"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stage": "checking_resource",
+        "resource_id": "uhn_eye_existing_referral",
+        "message": "Checking the curated resource and review date."
+      },
+      {
+        "stage": "checking_constraints",
+        "resource_id": "uhn_eye_existing_referral",
+        "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access."
+      },
+      {
+        "stage": "rejected",
+        "resource_id": "uhn_eye_existing_referral",
+        "message": "in_person_pathway_conflicts_with_travel_constraint; requested_accessibility_not_verified"
+      },
+      {
+        "stage": "searching_alternative",
+        "resource_id": null,
+        "message": "Searching the remaining curated options."
+      },
+      {
+        "stage": "checking_resource",
+        "resource_id": "ontario_health811",
+        "message": "Checking the curated resource and review date."
+      },
+      {
+        "stage": "checking_constraints",
+        "resource_id": "ontario_health811",
+        "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access."
+      },
+      {
+        "stage": "rejected",
+        "resource_id": "ontario_health811",
+        "message": "requested_accessibility_not_verified"
+      },
+      {
+        "stage": "searching_alternative",
+        "resource_id": null,
+        "message": "Searching the remaining curated options."
+      },
+      {
+        "stage": "checking_resource",
+        "resource_id": "ontario_optometrist_register",
+        "message": "Checking the curated resource and review date."
+      },
+      {
+        "stage": "checking_constraints",
+        "resource_id": "ontario_optometrist_register",
+        "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access."
+      },
+      {
+        "stage": "rejected",
+        "resource_id": "ontario_optometrist_register",
+        "message": "requested_accessibility_not_verified"
+      },
+      {
+        "stage": "searching_alternative",
+        "resource_id": null,
+        "message": "Searching the remaining curated options."
+      },
+      {
+        "stage": "no_verified_match",
+        "resource_id": null,
+        "message": "No curated option satisfies every requested constraint. No action is proposed."
+      }
+    ],
+    "limitations": [
+      "Curated navigation information checked against official sources. A match is not confirmation of eligibility, availability, clinical suitability or an appointment. No service is contacted by this prototype.",
+      "Fixed registry order is a demonstration policy, not clinical ranking.",
+      "Remote navigation does not replace an in-person examination.",
+      "Replanning invalidates old approvals. Previously imported calendar files cannot be recalled."
+    ]
+  },
+  "diagnosis_refusal": {
+    "topic": "diagnosis",
+    "state": null,
+    "mode": "allowlisted_scripts",
+    "approval": "prototype_allowlist_not_clinical_approval",
+    "refused": true,
+    "revision": null,
+    "segments": [
+      {
+        "scope": "safety",
+        "text": "I cannot diagnose an eye condition, assign a disease stage, predict your vision, or recommend personal treatment. An eye-care professional must assess your eyes. I can explain the approved general topics or show the supplied record evidence.",
+        "source_ids": [],
+        "event_ids": []
+      }
+    ],
+    "transcript": "I cannot diagnose an eye condition, assign a disease stage, predict your vision, or recommend personal treatment. An eye-care professional must assess your eyes. I can explain the approved general topics or show the supplied record evidence.",
+    "sources": [],
+    "evidence": [],
+    "audio_available": false
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "mode": "demo",
+  "records": [
+    {
+      "id": "scenario1",
+      "date": "2026-10-03",
+      "title": "Synthetic encounter 1",
+      "synthetic": true,
+      "text": "Type 2 diabetes documented. Retinal examination recommended."
+    },
+    {
+      "id": "scenario2",
+      "date": "2026-10-13",
+      "title": "Synthetic encounter 2",
+      "synthetic": true,
+      "text": "Retinal examination completed."
+    }
+  ]
+}

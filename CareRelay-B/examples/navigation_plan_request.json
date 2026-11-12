@@ -1,0 +1,7 @@
+{
+  "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+  "signal_id": "sig_3b27843e1868d299",
+  "constraints": {
+    "travel": "cannot_travel"
+  }
+}

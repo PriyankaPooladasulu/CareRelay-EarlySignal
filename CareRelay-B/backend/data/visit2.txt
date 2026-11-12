@@ -1,0 +1,5 @@
+SYNTHETIC DEMONSTRATION RECORD
+
+Patient attended follow-up encounter.
+Previous retinal examination recommendation was discussed again.
+No retinal examination result is available in the supplied records.

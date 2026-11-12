@@ -1,0 +1,27 @@
+{
+  "topic": "retina",
+  "version": "1.0",
+  "review_status": "source_checked_prototype_clinical_review_pending",
+  "disclaimer": "General educational visualization. This model does not represent the patient's actual eye. Only an appropriate healthcare professional can determine whether these changes are present.",
+  "progression_limit": "These four teaching views are simplified examples, not a clinical staging system, a prediction, or an inevitable sequence. Never assign a view to a patient from a follow-up signal.",
+  "sources": [
+    {"id":"nei_anatomy","title":"How the Eyes Work","publisher":"National Eye Institute, NIH","url":"https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work","checked_on":"2026-10-31"},
+    {"id":"nei_retinopathy","title":"Diabetic Retinopathy","publisher":"National Eye Institute, NIH","url":"https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/diabetic-retinopathy","checked_on":"2026-10-31"},
+    {"id":"cdc_vision","title":"Vision Loss and Diabetes","publisher":"Centers for Disease Control and Prevention","url":"https://www.cdc.gov/diabetes/diabetes-complications/diabetes-and-vision-loss.html","checked_on":"2026-10-31"}
+  ],
+  "anatomy": [
+    {"id":"retina","title":"Retina","text":"At the back of the eye, the retina turns incoming light into signals used for vision.","source_ids":["nei_anatomy"]},
+    {"id":"macula","title":"Macula","text":"The macula is the retinal area used for sharp central vision.","source_ids":["nei_retinopathy"]},
+    {"id":"blood_vessels","title":"Retinal blood vessels","text":"Diabetes can damage the small retinal vessels, affecting blood flow and allowing fluid or blood to escape.","source_ids":["nei_retinopathy"]},
+    {"id":"optic_nerve","title":"Optic nerve","text":"Signals from the retina travel along the optic nerve to the brain.","source_ids":["nei_anatomy"]},
+    {"id":"cornea","title":"Cornea","text":"The clear front surface bends incoming light to help focus it.","source_ids":["nei_anatomy"]},
+    {"id":"lens","title":"Lens","text":"Inside the eye, the lens helps focus light onto the retina.","source_ids":["nei_anatomy"]}
+  ],
+  "follow_up": {"id":"follow_up","title":"Why follow-up matters","text":"Diabetes-related retinal changes can begin without noticeable symptoms. A dilated eye examination lets an eye professional check the retina. A record reminder is a reason to clarify documented follow-up, not evidence that someone has retinal disease.","source_ids":["nei_retinopathy"]},
+  "states": [
+    {"id":"normal","title":"Normal educational view","text":"This reference view introduces retinal anatomy and visual signalling. It does not establish that a particular person's eyes are healthy.","source_ids":["nei_anatomy"],"anatomy_focus":["retina","macula","blood_vessels","optic_nerve"]},
+    {"id":"early","title":"General early changes","text":"In early diabetic retinopathy, small vessel walls may weaken and bulge. People may not notice symptoms.","source_ids":["cdc_vision"],"anatomy_focus":["blood_vessels"]},
+    {"id":"progressing","title":"General progressing changes","text":"Fluid leaking from damaged vessels can cause swelling in the macula and affect central vision. This example is not a separate formal disease stage.","source_ids":["nei_retinopathy"],"anatomy_focus":["blood_vessels","macula"]},
+    {"id":"advanced","title":"General advanced changes","text":"Advanced proliferative disease can involve fragile new vessels that bleed. This is a general example, not a forecast for any patient.","source_ids":["cdc_vision"],"anatomy_focus":["blood_vessels","retina"]}
+  ]
+}

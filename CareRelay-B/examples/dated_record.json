@@ -1,0 +1,11 @@
+{
+  "mode": "demo",
+  "records": [
+    {
+      "id": "dated-note",
+      "title": "Synthetic dated note",
+      "text": "Date: October 31, 2026\nRetinal examination recommended.",
+      "synthetic": true
+    }
+  ]
+}

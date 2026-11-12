@@ -1,0 +1,363 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>CareRelay saved rehearsal</title><style>
+    :root{font:16px/1.6 system-ui;color:#173441;background:#eef4f5}*{box-sizing:border-box}body{margin:0}header{background:#123e50;color:white;padding:30px max(24px,calc((100vw - 1000px)/2))}h1{font-size:32px}main{max-width:1050px;margin:auto;padding:24px}section{background:white;border:1px solid #cbdde2;border-radius:12px;margin:0 0 24px;padding:24px;overflow-wrap:anywhere}h2{font-size:23px}article{border-left:3px solid #16819a;padding:6px 16px;margin:18px 0}blockquote{margin-left:0;color:#275f70}small{color:#526f7b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eff4f5;padding:16px;font-size:13px}summary{cursor:pointer;font-weight:600;padding:10px 0}.badge{background:#fff0ba;color:#45350a;padding:12px 18px;border-radius:8px}li{margin:8px 0}details{margin:10px 0}</style></head><body><header><p>MEMBER B · SAVED SYNTHETIC REHEARSAL</p><h1>CareRelay EarlySignal</h1><p class="badge">READ ONLY · Cached deterministic demo · No live AI · No actions are executed</p><p>Scenario: November 12, 2026. This saved example does not establish current resource eligibility or completed care.</p></header><main><section><h2>1. Supplied records and exact evidence</h2><p>Three synthetic records; six accepted events. Deterministic extraction, not a live AI response.</p><article><strong>2026-10-03 · observation</strong><p>Type 2 diabetes documented in the supplied record</p><blockquote>Type 2 diabetes is documented in the medical history.</blockquote><small>visit1 · Unicode characters 68–121</small></article><article><strong>2026-10-03 · instruction</strong><p>Retinal examination follow-up recommended or discussed</p><blockquote>Retinal examination recommended.</blockquote><small>visit1 · Unicode characters 122–154</small></article><article><strong>2026-10-13 · instruction</strong><p>Retinal examination follow-up recommended or discussed</p><blockquote>Previous retinal examination recommendation was discussed again.</blockquote><small>visit2 · Unicode characters 70–134</small></article><article><strong>2026-10-13 · not_completed</strong><p>Record reports follow-up unarranged or completion undocumented</p><blockquote>No retinal examination result is available in the supplied records.</blockquote><small>visit2 · Unicode characters 135–202</small></article><article><strong>2026-10-24 · not_completed</strong><p>Record reports follow-up unarranged or completion undocumented</p><blockquote>Patient reports that the recommended retinal examination has not yet been arranged.</blockquote><small>visit3 · Unicode characters 32–115</small></article><article><strong>2026-10-24 · not_completed</strong><p>Record reports follow-up unarranged or completion undocumented</p><blockquote>No completion documentation is available in the supplied records.</blockquote><small>visit3 · Unicode characters 116–181</small></article><details><summary>Original records</summary><pre>[
+  {
+    &quot;id&quot;: &quot;visit1&quot;,
+    &quot;date&quot;: &quot;2026-10-03&quot;,
+    &quot;title&quot;: &quot;Synthetic encounter 1&quot;,
+    &quot;text&quot;: &quot;SYNTHETIC DEMONSTRATION RECORD\n\nPatient attended routine follow-up.\nType 2 diabetes is documented in the medical history.\nRetinal examination recommended.\nPatient advised to arrange appropriate follow-up.\n&quot;,
+    &quot;synthetic&quot;: true,
+    &quot;date_provenance&quot;: {
+      &quot;origin&quot;: &quot;supplied_metadata&quot;,
+      &quot;quote&quot;: null,
+      &quot;start&quot;: null,
+      &quot;end&quot;: null
+    }
+  },
+  {
+    &quot;id&quot;: &quot;visit2&quot;,
+    &quot;date&quot;: &quot;2026-10-13&quot;,
+    &quot;title&quot;: &quot;Synthetic encounter 2&quot;,
+    &quot;text&quot;: &quot;SYNTHETIC DEMONSTRATION RECORD\n\nPatient attended follow-up encounter.\nPrevious retinal examination recommendation was discussed again.\nNo retinal examination result is available in the supplied records.\n&quot;,
+    &quot;synthetic&quot;: true,
+    &quot;date_provenance&quot;: {
+      &quot;origin&quot;: &quot;supplied_metadata&quot;,
+      &quot;quote&quot;: null,
+      &quot;start&quot;: null,
+      &quot;end&quot;: null
+    }
+  },
+  {
+    &quot;id&quot;: &quot;visit3&quot;,
+    &quot;date&quot;: &quot;2026-10-24&quot;,
+    &quot;title&quot;: &quot;Synthetic encounter 3&quot;,
+    &quot;text&quot;: &quot;SYNTHETIC DEMONSTRATION RECORD\n\nPatient reports that the recommended retinal examination has not yet been arranged.\nNo completion documentation is available in the supplied records.\n&quot;,
+    &quot;synthetic&quot;: true,
+    &quot;date_provenance&quot;: {
+      &quot;origin&quot;: &quot;supplied_metadata&quot;,
+      &quot;quote&quot;: null,
+      &quot;start&quot;: null,
+      &quot;end&quot;: null
+    }
+  }
+]</pre></details></section><section><h2>2. Missing signal and general education</h2><p>No validated later completion was found after the latest instruction in the supplied records. Missing documentation does not prove care did not occur.</p><p>The record finding remains separate from any later user report.</p><article><strong>Normal educational view</strong><p>This reference view introduces retinal anatomy and visual signalling. It does not establish that a particular person&#x27;s eyes are healthy.</p></article><article><strong>General early changes</strong><p>In early diabetic retinopathy, small vessel walls may weaken and bulge. People may not notice symptoms.</p></article><article><strong>General progressing changes</strong><p>Fluid leaking from damaged vessels can cause swelling in the macula and affect central vision. This example is not a separate formal disease stage.</p></article><article><strong>General advanced changes</strong><p>Advanced proliferative disease can involve fragile new vessels that bleed. This is a general example, not a forecast for any patient.</p></article><p>General educational visualization. This model does not represent the patient&#x27;s actual eye. Only an appropriate healthcare professional can determine whether these changes are present.</p><details><summary>Source-linked patient narration</summary><pre>{
+  &quot;topic&quot;: &quot;patient_facts&quot;,
+  &quot;state&quot;: null,
+  &quot;mode&quot;: &quot;allowlisted_scripts&quot;,
+  &quot;approval&quot;: &quot;prototype_allowlist_not_clinical_approval&quot;,
+  &quot;refused&quot;: false,
+  &quot;revision&quot;: &quot;af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf&quot;,
+  &quot;segments&quot;: [
+    {
+      &quot;scope&quot;: &quot;limitation&quot;,
+      &quot;text&quot;: &quot;These are statements from the supplied synthetic records, not independently verified diagnoses or care status.&quot;,
+      &quot;source_ids&quot;: [],
+      &quot;event_ids&quot;: []
+    },
+    {
+      &quot;scope&quot;: &quot;patient_record&quot;,
+      &quot;text&quot;: &quot;Record dated 2026-10-03: Type 2 diabetes documented in the supplied record. Source says: Type 2 diabetes is documented in the medical history.&quot;,
+      &quot;source_ids&quot;: [],
+      &quot;event_ids&quot;: [
+        &quot;evt_9082ee4eb5ccfc0b&quot;
+      ]
+    },
+    {
+      &quot;scope&quot;: &quot;patient_record&quot;,
+      &quot;text&quot;: &quot;Record dated 2026-10-03: Retinal examination follow-up recommended or discussed. Source says: Retinal examination recommended.&quot;,
+      &quot;source_ids&quot;: [],
+      &quot;event_ids&quot;: [
+        &quot;evt_e3e946dc974358d1&quot;
+      ]
+    },
+    {
+      &quot;scope&quot;: &quot;patient_record&quot;,
+      &quot;text&quot;: &quot;Record dated 2026-10-13: Retinal examination follow-up recommended or discussed. Source says: Previous retinal examination recommendation was discussed again.&quot;,
+      &quot;source_ids&quot;: [],
+      &quot;event_ids&quot;: [
+        &quot;evt_3122ea2c4c64942e&quot;
+      ]
+    },
+    {
+      &quot;scope&quot;: &quot;patient_record&quot;,
+      &quot;text&quot;: &quot;Record dated 2026-10-13: Record reports follow-up unarranged or completion undocumented. Source says: No retinal examination result is available in the supplied records.&quot;,
+      &quot;source_ids&quot;: [],
+      &quot;event_ids&quot;: [
+        &quot;evt_4eba79c7ea2656e7&quot;
+      ]
+    },
+    {
+      &quot;scope&quot;: &quot;patient_record&quot;,
+      &quot;text&quot;: &quot;Record dated 2026-10-24: Record reports follow-up unarranged or completion undocumented. Source says: Patient reports that the recommended retinal examination has not yet been arranged.&quot;,
+      &quot;source_ids&quot;: [],
+      &quot;event_ids&quot;: [
+        &quot;evt_042c0b247ae15a8b&quot;
+      ]
+    },
+    {
+      &quot;scope&quot;: &quot;patient_record&quot;,
+      &quot;text&quot;: &quot;Record dated 2026-10-24: Record reports follow-up unarranged or completion undocumented. Source says: No completion documentation is available in the supplied records.&quot;,
+      &quot;source_ids&quot;: [],
+      &quot;event_ids&quot;: [
+        &quot;evt_5c3ca12281966744&quot;
+      ]
+    }
+  ],
+  &quot;transcript&quot;: &quot;These are statements from the supplied synthetic records, not independently verified diagnoses or care status.\n\nRecord dated 2026-10-03: Type 2 diabetes documented in the supplied record. Source says: Type 2 diabetes is documented in the medical history.\n\nRecord dated 2026-10-03: Retinal examination follow-up recommended or discussed. Source says: Retinal examination recommended.\n\nRecord dated 2026-10-13: Retinal examination follow-up recommended or discussed. Source says: Previous retinal examination recommendation was discussed again.\n\nRecord dated 2026-10-13: Record reports follow-up unarranged or completion undocumented. Source says: No retinal examination result is available in the supplied records.\n\nRecord dated 2026-10-24: Record reports follow-up unarranged or completion undocumented. Source says: Patient reports that the recommended retinal examination has not yet been arranged.\n\nRecord dated 2026-10-24: Record reports follow-up unarranged or completion undocumented. Source says: No completion documentation is available in the supplied records.&quot;,
+  &quot;sources&quot;: [],
+  &quot;evidence&quot;: [
+    {
+      &quot;event_id&quot;: &quot;evt_9082ee4eb5ccfc0b&quot;,
+      &quot;date&quot;: &quot;2026-10-03&quot;,
+      &quot;evidence&quot;: {
+        &quot;source_id&quot;: &quot;visit1&quot;,
+        &quot;source_title&quot;: &quot;Synthetic encounter 1&quot;,
+        &quot;quote&quot;: &quot;Type 2 diabetes is documented in the medical history.&quot;,
+        &quot;start&quot;: 68,
+        &quot;end&quot;: 121,
+        &quot;source_sha256&quot;: &quot;2058654c8f3efb52dc800e5c37d665a1b82c727179a670ca887b18077d2987f0&quot;,
+        &quot;validation&quot;: &quot;exact_span_and_bounded_semantic_rule&quot;
+      }
+    },
+    {
+      &quot;event_id&quot;: &quot;evt_e3e946dc974358d1&quot;,
+      &quot;date&quot;: &quot;2026-10-03&quot;,
+      &quot;evidence&quot;: {
+        &quot;source_id&quot;: &quot;visit1&quot;,
+        &quot;source_title&quot;: &quot;Synthetic encounter 1&quot;,
+        &quot;quote&quot;: &quot;Retinal examination recommended.&quot;,
+        &quot;start&quot;: 122,
+        &quot;end&quot;: 154,
+        &quot;source_sha256&quot;: &quot;2058654c8f3efb52dc800e5c37d665a1b82c727179a670ca887b18077d2987f0&quot;,
+        &quot;validation&quot;: &quot;exact_span_and_bounded_semantic_rule&quot;
+      }
+    },
+    {
+      &quot;event_id&quot;: &quot;evt_3122ea2c4c64942e&quot;,
+      &quot;date&quot;: &quot;2026-10-13&quot;,
+      &quot;evidence&quot;: {
+        &quot;source_id&quot;: &quot;visit2&quot;,
+        &quot;source_title&quot;: &quot;Synthetic encounter 2&quot;,
+        &quot;quote&quot;: &quot;Previous retinal examination recommendation was discussed again.&quot;,
+        &quot;start&quot;: 70,
+        &quot;end&quot;: 134,
+        &quot;source_sha256&quot;: &quot;7206cebe8ba0a5c03d49a72483a80a2eaa3f842467f6bc2f92e47ead123855d6&quot;,
+        &quot;validation&quot;: &quot;exact_span_and_bounded_semantic_rule&quot;
+      }
+    },
+    {
+      &quot;event_id&quot;: &quot;evt_4eba79c7ea2656e7&quot;,
+      &quot;date&quot;: &quot;2026-10-13&quot;,
+      &quot;evidence&quot;: {
+        &quot;source_id&quot;: &quot;visit2&quot;,
+        &quot;source_title&quot;: &quot;Synthetic encounter 2&quot;,
+        &quot;quote&quot;: &quot;No retinal examination result is available in the supplied records.&quot;,
+        &quot;start&quot;: 135,
+        &quot;end&quot;: 202,
+        &quot;source_sha256&quot;: &quot;7206cebe8ba0a5c03d49a72483a80a2eaa3f842467f6bc2f92e47ead123855d6&quot;,
+        &quot;validation&quot;: &quot;exact_span_and_bounded_semantic_rule&quot;
+      }
+    },
+    {
+      &quot;event_id&quot;: &quot;evt_042c0b247ae15a8b&quot;,
+      &quot;date&quot;: &quot;2026-10-24&quot;,
+      &quot;evidence&quot;: {
+        &quot;source_id&quot;: &quot;visit3&quot;,
+        &quot;source_title&quot;: &quot;Synthetic encounter 3&quot;,
+        &quot;quote&quot;: &quot;Patient reports that the recommended retinal examination has not yet been arranged.&quot;,
+        &quot;start&quot;: 32,
+        &quot;end&quot;: 115,
+        &quot;source_sha256&quot;: &quot;a9f5e61d848af249eff66eac15b23099b205af3c4dc6282c3d07f5570637e885&quot;,
+        &quot;validation&quot;: &quot;exact_span_and_bounded_semantic_rule&quot;
+      }
+    },
+    {
+      &quot;event_id&quot;: &quot;evt_5c3ca12281966744&quot;,
+      &quot;date&quot;: &quot;2026-10-24&quot;,
+      &quot;evidence&quot;: {
+        &quot;source_id&quot;: &quot;visit3&quot;,
+        &quot;source_title&quot;: &quot;Synthetic encounter 3&quot;,
+        &quot;quote&quot;: &quot;No completion documentation is available in the supplied records.&quot;,
+        &quot;start&quot;: 116,
+        &quot;end&quot;: 181,
+        &quot;source_sha256&quot;: &quot;a9f5e61d848af249eff66eac15b23099b205af3c4dc6282c3d07f5570637e885&quot;,
+        &quot;validation&quot;: &quot;exact_span_and_bounded_semantic_rule&quot;
+      }
+    }
+  ],
+  &quot;audio_available&quot;: false
+}</pre></details><details><summary>Education sources</summary><pre>[
+  {
+    &quot;id&quot;: &quot;nei_anatomy&quot;,
+    &quot;title&quot;: &quot;How the Eyes Work&quot;,
+    &quot;publisher&quot;: &quot;National Eye Institute, NIH&quot;,
+    &quot;url&quot;: &quot;https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work&quot;,
+    &quot;checked_on&quot;: &quot;2026-10-31&quot;
+  },
+  {
+    &quot;id&quot;: &quot;nei_retinopathy&quot;,
+    &quot;title&quot;: &quot;Diabetic Retinopathy&quot;,
+    &quot;publisher&quot;: &quot;National Eye Institute, NIH&quot;,
+    &quot;url&quot;: &quot;https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/diabetic-retinopathy&quot;,
+    &quot;checked_on&quot;: &quot;2026-10-31&quot;
+  },
+  {
+    &quot;id&quot;: &quot;cdc_vision&quot;,
+    &quot;title&quot;: &quot;Vision Loss and Diabetes&quot;,
+    &quot;publisher&quot;: &quot;Centers for Disease Control and Prevention&quot;,
+    &quot;url&quot;: &quot;https://www.cdc.gov/diabetes/diabetes-complications/diabetes-and-vision-loss.html&quot;,
+    &quot;checked_on&quot;: &quot;2026-10-31&quot;
+  }
+]</pre></details></section><section><h2>3. Travel rejection and alternative</h2><p>This scenario explicitly assumes an existing referral to the UHN clinic; Amina's notes do not establish it.</p><p>First option: UHN Comprehensive Ophthalmology Unit: existing-referral pathway. After cannot_travel: Ontario Health811: remote navigation. Remote navigation does not replace an examination.</p><ol><li><strong>checking resource</strong>: Checking the curated resource and review date.</li><li><strong>checking constraints</strong>: Checking jurisdiction, travel, referral, language, accessibility and telephone access.</li><li><strong>rejected</strong>: in_person_pathway_conflicts_with_travel_constraint</li><li><strong>searching alternative</strong>: Searching the remaining curated options.</li><li><strong>checking resource</strong>: Checking the curated resource and review date.</li><li><strong>checking constraints</strong>: Checking jurisdiction, travel, referral, language, accessibility and telephone access.</li><li><strong>selected</strong>: Matches the declared navigation constraints; confirm service eligibility directly.</li></ol><details><summary>Selected resource and official sources</summary><pre>{
+  &quot;id&quot;: &quot;ontario_health811&quot;,
+  &quot;name&quot;: &quot;Ontario Health811: remote navigation&quot;,
+  &quot;kind&quot;: &quot;navigation&quot;,
+  &quot;jurisdiction&quot;: [
+    &quot;Ontario&quot;
+  ],
+  &quot;location&quot;: &quot;Remote service for people in Ontario&quot;,
+  &quot;delivery&quot;: &quot;remote&quot;,
+  &quot;purpose&quot;: &quot;Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination.&quot;,
+  &quot;eligibility&quot;: &quot;Ontario navigation service; individual service access and interpretation arrangements should be confirmed directly.&quot;,
+  &quot;requires_existing_referral&quot;: false,
+  &quot;languages&quot;: [
+    &quot;en&quot;,
+    &quot;fr&quot;
+  ],
+  &quot;accessibility&quot;: [
+    &quot;tty&quot;
+  ],
+  &quot;requires_phone&quot;: true,
+  &quot;source_urls&quot;: [
+    &quot;https://www.ontario.ca/page/your-health&quot;,
+    &quot;https://ontariohealth.ca/news/health811-resources-help-providers-support-patients-in-accessing&quot;
+  ],
+  &quot;verified_on&quot;: &quot;2026-11-01&quot;,
+  &quot;review_due&quot;: &quot;2027-01-30&quot;,
+  &quot;verification_note&quot;: &quot;Official Ontario/ Ontario Health indexed content confirms telephone navigation, English/French support and TTY access. Full-page retrieval was blocked; this review used the official indexed excerpts. Other specific language support is not assumed.&quot;,
+  &quot;limitations&quot;: [
+    &quot;Navigation alternative only; not an equivalent substitute for an eye exam.&quot;,
+    &quot;Wait times, individual eligibility and availability are not guaranteed.&quot;,
+    &quot;Only English/French and TTY are encoded; unknown requested capabilities fail closed.&quot;
+  ]
+}</pre></details><details><summary>No-match example: unverified step-free access</summary><pre>{
+  &quot;id&quot;: &quot;plan_dea178df5e5c4ce79f613a1265d6906b&quot;,
+  &quot;revision&quot;: &quot;af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf&quot;,
+  &quot;signal_id&quot;: &quot;sig_3b27843e1868d299&quot;,
+  &quot;constraints&quot;: {
+    &quot;jurisdiction&quot;: &quot;Ontario&quot;,
+    &quot;travel&quot;: &quot;cannot_travel&quot;,
+    &quot;language&quot;: &quot;any&quot;,
+    &quot;accessibility&quot;: &quot;step_free&quot;,
+    &quot;phone_available&quot;: true,
+    &quot;existing_referral_confirmed&quot;: true
+  },
+  &quot;registry_digest&quot;: &quot;674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024&quot;,
+  &quot;created_at&quot;: &quot;2026-11-12T12:00:00Z&quot;,
+  &quot;active&quot;: true,
+  &quot;mode&quot;: &quot;deterministic_navigation&quot;,
+  &quot;status&quot;: &quot;no_verified_match&quot;,
+  &quot;selected&quot;: null,
+  &quot;evaluations&quot;: [
+    {
+      &quot;resource_id&quot;: &quot;uhn_eye_existing_referral&quot;,
+      &quot;eligible&quot;: false,
+      &quot;reasons&quot;: [
+        &quot;in_person_pathway_conflicts_with_travel_constraint&quot;,
+        &quot;requested_accessibility_not_verified&quot;
+      ]
+    },
+    {
+      &quot;resource_id&quot;: &quot;ontario_health811&quot;,
+      &quot;eligible&quot;: false,
+      &quot;reasons&quot;: [
+        &quot;requested_accessibility_not_verified&quot;
+      ]
+    },
+    {
+      &quot;resource_id&quot;: &quot;ontario_optometrist_register&quot;,
+      &quot;eligible&quot;: false,
+      &quot;reasons&quot;: [
+        &quot;requested_accessibility_not_verified&quot;
+      ]
+    }
+  ],
+  &quot;steps&quot;: [
+    {
+      &quot;stage&quot;: &quot;checking_resource&quot;,
+      &quot;resource_id&quot;: &quot;uhn_eye_existing_referral&quot;,
+      &quot;message&quot;: &quot;Checking the curated resource and review date.&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;checking_constraints&quot;,
+      &quot;resource_id&quot;: &quot;uhn_eye_existing_referral&quot;,
+      &quot;message&quot;: &quot;Checking jurisdiction, travel, referral, language, accessibility and telephone access.&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;rejected&quot;,
+      &quot;resource_id&quot;: &quot;uhn_eye_existing_referral&quot;,
+      &quot;message&quot;: &quot;in_person_pathway_conflicts_with_travel_constraint; requested_accessibility_not_verified&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;searching_alternative&quot;,
+      &quot;resource_id&quot;: null,
+      &quot;message&quot;: &quot;Searching the remaining curated options.&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;checking_resource&quot;,
+      &quot;resource_id&quot;: &quot;ontario_health811&quot;,
+      &quot;message&quot;: &quot;Checking the curated resource and review date.&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;checking_constraints&quot;,
+      &quot;resource_id&quot;: &quot;ontario_health811&quot;,
+      &quot;message&quot;: &quot;Checking jurisdiction, travel, referral, language, accessibility and telephone access.&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;rejected&quot;,
+      &quot;resource_id&quot;: &quot;ontario_health811&quot;,
+      &quot;message&quot;: &quot;requested_accessibility_not_verified&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;searching_alternative&quot;,
+      &quot;resource_id&quot;: null,
+      &quot;message&quot;: &quot;Searching the remaining curated options.&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;checking_resource&quot;,
+      &quot;resource_id&quot;: &quot;ontario_optometrist_register&quot;,
+      &quot;message&quot;: &quot;Checking the curated resource and review date.&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;checking_constraints&quot;,
+      &quot;resource_id&quot;: &quot;ontario_optometrist_register&quot;,
+      &quot;message&quot;: &quot;Checking jurisdiction, travel, referral, language, accessibility and telephone access.&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;rejected&quot;,
+      &quot;resource_id&quot;: &quot;ontario_optometrist_register&quot;,
+      &quot;message&quot;: &quot;requested_accessibility_not_verified&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;searching_alternative&quot;,
+      &quot;resource_id&quot;: null,
+      &quot;message&quot;: &quot;Searching the remaining curated options.&quot;
+    },
+    {
+      &quot;stage&quot;: &quot;no_verified_match&quot;,
+      &quot;resource_id&quot;: null,
+      &quot;message&quot;: &quot;No curated option satisfies every requested constraint. No action is proposed.&quot;
+    }
+  ],
+  &quot;limitations&quot;: [
+    &quot;Curated navigation information checked against official sources. A match is not confirmation of eligibility, availability, clinical suitability or an appointment. No service is contacted by this prototype.&quot;,
+    &quot;Fixed registry order is a demonstration policy, not clinical ranking.&quot;,
+    &quot;Remote navigation does not replace an in-person examination.&quot;,
+    &quot;Replanning invalidates old approvals. Previously imported calendar files cannot be recalled.&quot;
+  ]
+}</pre></details></section><section><h2>4. Approval and reported completion</h2><p>Recorded rehearsal states: proposed → approved → awaiting_confirmation → completed.</p><p>The pre-approval calendar request returned 403. No approval or completion action can be taken on this page.</p><p>Completed means an explicit unverified synthetic report, not clinical verification. The source timeline was not rewritten.</p><details><summary>Recorded completion report</summary><pre>{
+  &quot;completed_on&quot;: &quot;2026-11-12&quot;,
+  &quot;reported_by&quot;: &quot;patient&quot;,
+  &quot;confirmed_at&quot;: &quot;2026-11-12T12:00:00Z&quot;,
+  &quot;basis&quot;: &quot;explicit_unverified_report&quot;,
+  &quot;clinically_verified&quot;: false
+}</pre></details></section><section><h2>5. Recorded action history</h2><ol><li>#1 audit started · recorded</li><li>#2 analysis saved · analyzed</li><li>#3 plan created · proposed</li><li>#4 plan step · checking_resource</li><li>#5 plan step · checking_constraints</li><li>#6 plan step · selected</li><li>#7 plan invalidated · inactive</li><li>#8 plan created · proposed</li><li>#9 plan step · checking_resource</li><li>#10 plan step · checking_constraints</li><li>#11 plan step · rejected</li><li>#12 plan step · searching_alternative</li><li>#13 plan step · checking_resource</li><li>#14 plan step · checking_constraints</li><li>#15 plan step · selected</li><li>#16 action proposed · proposed</li><li>#17 action approved · approved</li><li>#18 calendar generated · awaiting_confirmation</li><li>#19 completion reported · completed</li></ol><p>Local history is not authenticated or tamper-proof medical audit.</p></section><section><h2>6. Safety and handoff</h2><p>I cannot diagnose an eye condition, assign a disease stage, predict your vision, or recommend personal treatment. An eye-care professional must assess your eyes. I can explain the approved general topics or show the supplied record evidence.</p><p>When the backend is available, close this saved view and use START.cmd. Nothing viewed here changes its database. A's separate frontend, 3D and audio are not embedded in this backup.</p></section></main></body></html>

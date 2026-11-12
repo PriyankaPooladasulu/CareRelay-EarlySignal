@@ -1,0 +1,108 @@
+{
+  "id": "plan_eb664c4c028c420c86b309a576166037",
+  "revision": "af1d496dd3ab2ff8303d315f534e60ee1a68ab8cd26c401c90e9a61e0146dcdf",
+  "signal_id": "sig_3b27843e1868d299",
+  "constraints": {
+    "jurisdiction": "Ontario",
+    "travel": "cannot_travel",
+    "language": "any",
+    "accessibility": "none",
+    "phone_available": true,
+    "existing_referral_confirmed": true
+  },
+  "registry_digest": "674b450efd860fd470760d95bdff9ebb90ffdb19738085e63201dbdd49a56024",
+  "created_at": "2026-11-03T14:25:18.404777Z",
+  "active": true,
+  "mode": "deterministic_navigation",
+  "status": "proposed",
+  "selected": {
+    "id": "ontario_health811",
+    "name": "Ontario Health811: remote navigation",
+    "kind": "navigation",
+    "jurisdiction": [
+      "Ontario"
+    ],
+    "location": "Remote service for people in Ontario",
+    "delivery": "remote",
+    "purpose": "Ask for help finding local health services and clarifying next-step information by telephone. This does not perform a retinal examination.",
+    "eligibility": "Ontario navigation service; individual service access and interpretation arrangements should be confirmed directly.",
+    "requires_existing_referral": false,
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "accessibility": [
+      "tty"
+    ],
+    "requires_phone": true,
+    "source_urls": [
+      "https://www.ontario.ca/page/your-health",
+      "https://ontariohealth.ca/news/health811-resources-help-providers-support-patients-in-accessing"
+    ],
+    "verified_on": "2026-11-01",
+    "review_due": "2027-01-30",
+    "verification_note": "Official Ontario/ Ontario Health indexed content confirms telephone navigation, English/French support and TTY access. Full-page retrieval was blocked; this review used the official indexed excerpts. Other specific language support is not assumed.",
+    "limitations": [
+      "Navigation alternative only; not an equivalent substitute for an eye exam.",
+      "Wait times, individual eligibility and availability are not guaranteed.",
+      "Only English/French and TTY are encoded; unknown requested capabilities fail closed."
+    ]
+  },
+  "evaluations": [
+    {
+      "resource_id": "uhn_eye_existing_referral",
+      "eligible": false,
+      "reasons": [
+        "in_person_pathway_conflicts_with_travel_constraint"
+      ]
+    },
+    {
+      "resource_id": "ontario_health811",
+      "eligible": true,
+      "reasons": []
+    }
+  ],
+  "steps": [
+    {
+      "stage": "checking_resource",
+      "resource_id": "uhn_eye_existing_referral",
+      "message": "Checking the curated resource and review date."
+    },
+    {
+      "stage": "checking_constraints",
+      "resource_id": "uhn_eye_existing_referral",
+      "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access."
+    },
+    {
+      "stage": "rejected",
+      "resource_id": "uhn_eye_existing_referral",
+      "message": "in_person_pathway_conflicts_with_travel_constraint"
+    },
+    {
+      "stage": "searching_alternative",
+      "resource_id": null,
+      "message": "Searching the remaining curated options."
+    },
+    {
+      "stage": "checking_resource",
+      "resource_id": "ontario_health811",
+      "message": "Checking the curated resource and review date."
+    },
+    {
+      "stage": "checking_constraints",
+      "resource_id": "ontario_health811",
+      "message": "Checking jurisdiction, travel, referral, language, accessibility and telephone access."
+    },
+    {
+      "stage": "selected",
+      "resource_id": "ontario_health811",
+      "message": "Matches the declared navigation constraints; confirm service eligibility directly."
+    }
+  ],
+  "limitations": [
+    "Curated navigation information checked against official sources. A match is not confirmation of eligibility, availability, clinical suitability or an appointment. No service is contacted by this prototype.",
+    "Fixed registry order is a demonstration policy, not clinical ranking.",
+    "Remote navigation does not replace an in-person examination.",
+    "Replanning invalidates old approvals. Previously imported calendar files cannot be recalled."
+  ]
+}

@@ -1,0 +1,329 @@
+@import "tailwindcss";
+
+/* ───────────────────────── CareRelay tokens (see DESIGN.md, design/carerelay-design-reference.html) ─────────────────────────
+   Two worlds: the Record world (mist, paper, chart blue = patient facts) and
+   the Chamber (choroid, lens violet = general education). One bold element: the Relay Thread. No red anywhere. */
+:root {
+  /* Record world */
+  --mist: #f2f5f7;
+  --mist-deep: #e4eaef;
+  --paper: #fcfdfd;
+  --ink: #13222c;
+  --ink-soft: #4a5b68;
+  --ink-faint: #8796a3; /* decorative and large text only: 3:1 on mist */
+  --hair: #d5dee5;
+  --chart-blue: #1f5fa0;
+  --thread: #2f7bd0;
+  --thread-glow: #7fb6f2;
+  /* Signals */
+  --amber: #e9a23b;
+  --amber-ink: #7a4e00;
+  --amber-wash: #fbefd9;
+  --confirmed: #2c8a66;
+  /* Chamber */
+  --choroid: #0a1a21;
+  --choroid-2: #0f2630;
+  --lens-violet: #6a55c9;
+  --lens-soft: #b3a6f0;
+  --fundus-core: #f08a46;
+  --fundus-mid: #c24a26;
+  --fundus-edge: #5e1a12;
+  /* Shape: radius encodes hierarchy */
+  --r-paper: 4px;
+  --r-control: 12px;
+  --r-surface: 20px;
+  --shadow-paper: 0 1px 0 rgba(19, 34, 44, 0.05), 0 2px 4px -2px rgba(19, 34, 44, 0.08), 0 18px 40px -18px rgba(19, 34, 44, 0.22);
+
+  /* Aliases used by component classes (kept so no markup has to change) */
+  --paper-edge: var(--hair);
+  --ink-2: var(--ink-soft);
+  --ink-3: #56666f; /* small meta text: 5.4:1 on mist, AA */
+  --line: var(--hair);
+  --chart-blue-tint: #ebf1f8;
+  --lens-violet-text: var(--lens-soft);
+  --signal-amber: var(--amber);
+  --signal-amber-text: var(--amber-ink);
+  --signal-amber-tint: var(--amber-wash);
+  --confirmed-text: #1f6e50;
+  --confirmed-tint: #e2f2ea;
+  --chamber-text: #e7eef2;
+  --chamber-muted: #a9bcc6;
+  --focus: var(--thread-glow);
+  --thread-x: 40px;
+}
+
+[data-contrast="high"] {
+  --ink-soft: #1c2b35;
+  --ink-2: #1c2b35;
+  --ink-3: #26353f;
+  --line: #7f909b;
+  --paper-edge: #8796a0;
+  --chamber-muted: #d4e0e5;
+  --lens-violet-text: #d6cdfb;
+}
+
+@theme inline {
+  --color-mist: var(--mist);
+  --color-paper: var(--paper);
+  --color-paper-edge: var(--paper-edge);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-chart: var(--chart-blue);
+  --color-chart-tint: var(--chart-blue-tint);
+  --color-lens: var(--lens-violet);
+  --color-lens-text: var(--lens-violet-text);
+  --color-amber: var(--signal-amber);
+  --color-amber-text: var(--signal-amber-text);
+  --color-amber-tint: var(--signal-amber-tint);
+  --color-confirmed: var(--confirmed);
+  --color-confirmed-text: var(--confirmed-text);
+  --color-confirmed-tint: var(--confirmed-tint);
+  --color-choroid: var(--choroid);
+  --color-choroid-2: var(--choroid-2);
+  --color-chamber: var(--chamber-text);
+  --color-chamber-muted: var(--chamber-muted);
+  --color-mist-deep: var(--mist-deep);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-hair: var(--hair);
+  --color-thread: var(--thread);
+  --color-thread-glow: var(--thread-glow);
+  --color-amber-ink: var(--amber-ink);
+  --color-amber-wash: var(--amber-wash);
+  --color-lens-soft: var(--lens-soft);
+  --shadow-paper: var(--shadow-paper);
+  --radius-control: 12px;
+  --radius-surface: 20px;
+  --font-sans: var(--font-atkinson), var(--font-deva), var(--font-tamil), system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, serif;
+  --radius-paper: 4px;
+  --radius-action: 20px;
+  /* 1.25 type scale on an 18px base */
+  --text-xs: 0.8rem;
+  --text-sm: 0.889rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.563rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+  --text-4xl: 3.052rem;
+  --text-5xl: 3.815rem;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  overflow-x: clip;
+  font-size: 18px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 132px;
+}
+html[data-large="true"] { font-size: 21.6px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  overflow-x: clip;
+  background: var(--mist);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { letter-spacing: -0.01em; line-height: 1.2; font-weight: 650; }
+
+/* Display type: light, very large. ExtraBold is no longer used for big headings. */
+.t-hero { font-weight: 300; font-size: clamp(3.111rem, 7.4vw, 6.222rem); line-height: 0.98; letter-spacing: -0.035em; }
+.t-section { font-weight: 300; font-size: clamp(2.222rem, 4.4vw, 3.556rem); line-height: 1.02; letter-spacing: -0.03em; }
+.t-surface { font-weight: 300; font-size: clamp(1.889rem, 3.4vw, 2.667rem); line-height: 1.05; letter-spacing: -0.025em; }
+.t-stat { font-weight: 200; font-size: clamp(2.667rem, 4.6vw, 4rem); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.t-lede { font-size: clamp(1.111rem, 1.8vw, 1.444rem); line-height: 1.4; }
+
+/* Verbatim record text: serif means "the document's own words". */
+.record-voice { font-family: var(--font-serif); line-height: 1.6; }
+
+/* Focus: a 3px thread-glow ring, offset 3px, with a chart-blue edge so it also passes 3:1 on light surfaces. */
+:focus-visible { outline: 3px solid var(--thread-glow); outline-offset: 3px; box-shadow: 0 0 0 2px var(--chart-blue); }
+.chamber :focus-visible, .watch :focus-visible { outline-color: var(--lens-soft); box-shadow: none; }
+
+/* Faint grain over the Record world, felt more than seen. */
+.grain { position: relative; isolation: isolate; }
+.grain::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: -1; opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Paper sheets */
+.paper {
+  background: var(--paper);
+  border: 1px solid transparent;
+  border-radius: var(--r-paper);
+  box-shadow: var(--shadow-paper);
+}
+.paper-stack { position: relative; }
+
+/* A claim on a record sheet: a 3px rule, its type, the quote in the record's own serif. */
+.claim { border-left: 3px solid rgba(31, 95, 160, 0.28); }
+.claim:hover, .claim:focus-visible { border-left-color: var(--chart-blue); }
+.claim:hover mark, .claim:focus-visible mark { background: linear-gradient(transparent 58%, rgba(127, 182, 242, 0.45) 58%); color: inherit; }
+.claim mark { background: transparent; color: inherit; padding: 0; }
+
+/* The signal surface: amber radial wash, no dashed border. */
+.signal-surface { border-radius: var(--r-surface); background: radial-gradient(120% 140% at 0% 50%, rgba(233, 162, 59, 0.22), rgba(251, 239, 217, 0.55) 40%, rgba(252, 253, 253, 0.6) 75%); }
+.done-surface { border-radius: var(--r-surface); background: radial-gradient(120% 140% at 0% 50%, rgba(44, 138, 102, 0.16), rgba(252, 253, 253, 0.7) 55%); }
+
+/* The original record, as supplied: tilted sheet, record serif, soft highlighter. */
+.original-sheet { transform: rotate(0.6deg); }
+.original-sheet mark { background: rgba(127, 182, 242, 0.32); color: var(--ink); border-radius: 2px; padding: 1px 3px; box-shadow: 0 0 0 2px rgba(127, 182, 242, 0.25); }
+
+/* ───────── The Relay Thread ───────── */
+.thread-col { position: relative; width: 80px; flex: none; }
+@media (max-width: 767px) { :root { --thread-x: 14px; } .thread-col { width: 30px; } }
+/* The line: luminous, rounded, glowing. The one bold element on the page. */
+.thread-line {
+  position: absolute; left: var(--thread-x); top: 0; bottom: 0; width: 3.5px; transform: translateX(-50%);
+  background: var(--thread); border-radius: 3px; filter: drop-shadow(0 0 6px rgba(127, 182, 242, 0.9));
+}
+.thread-line.is-pending { background: repeating-linear-gradient(to bottom, rgba(135, 150, 163, 0.35) 0 6px, transparent 6px 13px); filter: none; width: 2px; }
+.thread-line.is-joined { background: var(--thread); }
+.thread-line.is-chamber { background: linear-gradient(to bottom, rgba(106, 85, 201, 0.15), rgba(179, 166, 240, 0.55), rgba(106, 85, 201, 0.15)); filter: drop-shadow(0 0 6px rgba(106, 85, 201, 0.6)); }
+.thread-node { position: absolute; left: var(--thread-x); transform: translate(-50%, -50%); z-index: 1; }
+/* The last stretch before the gap shifts to amber. */
+#timeline ol > li:last-child .thread-line { background: linear-gradient(var(--thread) 45%, var(--amber)); }
+
+/* Beads: white highlight at top-left, thread body, halo and glow. */
+.bead { display: block; border-radius: 50%; flex: none; width: 18px; height: 18px;
+  background: radial-gradient(circle at 35% 30%, #fff 0 18%, var(--thread) 45%);
+  box-shadow: 0 0 0 3px rgba(47, 123, 208, 0.14), 0 0 14px var(--thread-glow); }
+.bead.sm { width: 14px; height: 14px; }
+.bead.empty { background: var(--paper); border: 2px solid var(--hair); box-shadow: none; }
+.bead.gap { background: radial-gradient(circle, #fff6e6 0 20%, var(--amber) 60%);
+  box-shadow: 0 0 0 4px rgba(233, 162, 59, 0.18), 0 0 18px rgba(233, 162, 59, 0.7); animation: breathe 2.4s ease-in-out infinite; }
+.bead.edu { background: radial-gradient(circle at 35% 30%, #fff 0 16%, var(--lens-violet) 50%); box-shadow: 0 0 0 3px rgba(106, 85, 201, 0.2), 0 0 14px rgba(179, 166, 240, 0.7); }
+.bead.edu.empty { background: var(--choroid); border: 2px solid rgba(179, 166, 240, 0.5); box-shadow: none; }
+.bead.ok { background: var(--confirmed); box-shadow: 0 0 12px rgba(44, 138, 102, 0.7); }
+
+/* One traveling light pulse down the records. */
+.thread-travel { position: relative; }
+.thread-travel::after {
+  content: ""; position: absolute; left: var(--thread-x); top: 0; width: 4px; height: 64px; transform: translateX(-50%);
+  border-radius: 4px; pointer-events: none; z-index: 2;
+  background: linear-gradient(transparent, #fff 45%, #fff 55%, transparent);
+  filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 14px var(--thread-glow));
+  animation: travel-down 4.8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+@keyframes travel-down { 0% { top: 0; opacity: 0; } 10% { opacity: 1; } 85% { opacity: 1; } 100% { top: calc(100% - 64px); opacity: 0; } }
+
+/* SVG thread pieces (hero stage, gap, completed) */
+.t-base { fill: none; stroke: var(--thread); stroke-width: 3.5; stroke-linecap: round; filter: drop-shadow(0 0 6px rgba(127, 182, 242, 0.9)); }
+.t-pulse { fill: none; stroke: #fff; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 60 1400; animation: travel 4.8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+  filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 14px var(--thread-glow)); }
+.t-beads circle { fill: var(--thread); stroke: #fff; stroke-width: 3; filter: drop-shadow(0 0 8px var(--thread-glow)); }
+.strand { fill: none; stroke: var(--amber); stroke-width: 1.6; stroke-linecap: round; opacity: 0.85; }
+.strand.b { animation: drift 3.6s ease-in-out infinite alternate; }
+.strand.c { animation: drift 4.4s ease-in-out infinite alternate-reverse; }
+.spark { fill: #ffd99a; animation: flick 2.2s ease-in-out infinite; }
+.spark.s2 { animation-delay: 0.7s; } .spark.s3 { animation-delay: 1.4s; }
+@keyframes travel { 0% { stroke-dashoffset: 1460; } 100% { stroke-dashoffset: 0; } }
+@keyframes breathe { 0%, 100% { opacity: 0.75; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+@keyframes drift { from { transform: translate(0, 0); } to { transform: translate(3px, 2px); } }
+@keyframes flick { 0%, 100% { opacity: 0; } 40% { opacity: 1; } 70% { opacity: 0.2; } }
+
+/* Hero stage: three record mini-sheets fanned on the thread, ending in the frayed gap. */
+.stage { position: relative; aspect-ratio: 1 / 1.02; max-width: 640px; width: 100%; justify-self: end; }
+.stage svg.stage-thread { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: 3; pointer-events: none; }
+.mini { position: absolute; width: 56%; background: var(--paper); border-radius: var(--r-paper); box-shadow: var(--shadow-paper); padding: 18px 20px 22px; }
+.mini .d { font-size: 0.778rem; font-weight: 700; color: var(--chart-blue); }
+.mini .t { font-size: 0.722rem; color: var(--ink-3); }
+.mini .q { font-family: var(--font-serif); font-size: 0.944rem; line-height: 1.45; margin-top: 10px; color: var(--ink);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.mini .rule { height: 6px; border-radius: 3px; background: var(--mist-deep); margin-top: 9px; }
+.mini .rule.s { width: 62%; }
+.mini.m1 { left: 2%; top: 4%; transform: rotate(-2.2deg); }
+.mini.m2 { left: 30%; top: 28%; transform: rotate(1.4deg); }
+.mini.m3 { left: 12%; top: 54%; transform: rotate(-0.8deg); }
+.stage .light { position: absolute; width: 62%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(127, 182, 242, 0.35), transparent 65%); filter: blur(10px); left: 20%; top: 12%; }
+.stage .gaplight { position: absolute; width: 40%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(233, 162, 59, 0.38), transparent 62%); filter: blur(8px); left: 30%; top: 68%; animation: breathe 2.4s ease-in-out infinite; }
+
+/* Header journey track */
+.track-line { display: block; height: 3px; width: 2.25rem; border-radius: 3px; background: var(--hair); margin: 0 8px; flex: none; }
+@media (min-width: 768px) { .track-line { width: 3.111rem; margin: 0 10px; } }
+.track-line.on { background: var(--thread); box-shadow: 0 0 10px var(--thread-glow); }
+.track-line.fray { background: repeating-linear-gradient(90deg, var(--amber) 0 6px, transparent 6px 11px); opacity: 0.85; }
+.track-line.ok { background: var(--confirmed); box-shadow: 0 0 8px rgba(44, 138, 102, 0.5); }
+
+/* Buzz uses the individual translate/rotate properties so it composes with the resting tilt. */
+@keyframes buzz {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  20% { translate: -3px 0; rotate: -0.6deg; }
+  40% { translate: 3px 0; rotate: 0.6deg; }
+  60% { translate: -2px 0; }
+  80% { translate: 2px 0; }
+}
+.buzz { animation: buzz 0.42s linear 2; }
+
+/* The watch rests at a 3D tilt and eases toward flat on hover. */
+.watch-tilt { transform: perspective(1100px) rotateX(10deg) rotateY(-16deg) rotateZ(-2deg); transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); transform-style: preserve-3d; }
+.watch-tilt:hover, .watch-tilt:focus-within { transform: perspective(1100px) rotateX(4deg) rotateY(-6deg); }
+.watch-floor { width: 58%; height: 40px; border-radius: 50%; background: radial-gradient(rgba(19, 34, 44, 0.28), transparent 70%); filter: blur(10px); }
+.watch-screen { background: radial-gradient(circle at 50% 35%, #13232c, #050c10 70%); box-shadow: 0 0 0 3px #1e2a31, inset 0 0 30px rgba(127, 182, 242, 0.08); }
+.watch-sheen { background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 38%); }
+.cr-heart { display: inline-block; width: 16px; height: 16px; animation: beat 0.83s ease-in-out infinite; }
+@keyframes beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.25); } 30% { transform: scale(1); } }
+
+@keyframes hr-beat {
+  0%, 100% { transform: scale(1); }
+  12% { transform: scale(1.16); }
+  28% { transform: scale(1); }
+}
+
+/* Ambient motion is limited to the thread pulse, the gap (breathe, drift, sparks), the current bead and the heart.
+   Everything else moves only in response to the user. Reduced motion turns all of it off. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .t-pulse, .thread-travel::after { display: none; }
+  .watch-tilt { transform: none; }
+}
+
+/* A rejected option "steps back": desaturates and strikes its title */
+.stepped-back { filter: saturate(0.1); opacity: 0.6; transform: scale(0.985); }
+.stepped-back .resource-title { text-decoration: line-through; text-decoration-thickness: 2px; }
+
+/* Watch metal */
+.watch-bezel {
+  background:
+    radial-gradient(70% 70% at var(--spec-x, 30%) var(--spec-y, 22%), rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 42%),
+    conic-gradient(from 210deg, #f3f5f7, #a4adb5 12%, #e6eaee 24%, #8e979f 38%, #dce1e5 52%, #9aa3ab 66%, #f1f3f5 80%, #b2bac1 92%, #f3f5f7);
+  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.7) inset, 0 -3px 6px rgba(0, 0, 0, 0.25) inset, 0 30px 60px -20px rgba(19, 34, 44, 0.55), 0 60px 90px -40px rgba(19, 34, 44, 0.45);
+}
+.watch-brushed { background: repeating-conic-gradient(rgba(255, 255, 255, 0.07) 0 1deg, rgba(0, 0, 0, 0.04) 1deg 2deg); mix-blend-mode: overlay; }
+.knurl { background: repeating-linear-gradient(0deg, #c9cfd5 0 3px, #7e8790 3px 5px); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); }
+.strap {
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 5px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.12) 0 2px, transparent 2px 5px),
+    linear-gradient(90deg, #2c3a44, #3e4f5b 50%, #2c3a44);
+}
+
+/* Sharing tiles */
+.share-tile { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 16px; align-items: center; background: var(--paper); border-radius: var(--r-surface); padding: 16px 20px; box-shadow: var(--shadow-paper); border: 1px solid transparent; transition: border-color 0.2s, box-shadow 0.2s; }
+.share-tile.on { border-color: rgba(31, 95, 160, 0.35); box-shadow: var(--shadow-paper), 0 0 0 4px rgba(127, 182, 242, 0.18); }
+
+::selection { background: #cfe0f2; }
+.chamber ::selection { background: #3d3370; }
+
+/* Entering the Chamber darkens the page chrome too: a different room. */
+.topbar { transition: background-color 0.32s ease, color 0.32s ease, border-color 0.32s ease; }
+[data-world="chamber"] .topbar { background-color: rgba(10, 26, 33, 0.92); color: var(--chamber-text); border-color: rgba(255, 255, 255, 0.08); }
+[data-world="chamber"] .topbar .text-ink-2, [data-world="chamber"] .topbar .text-ink { color: var(--chamber-muted); }
+[data-world="chamber"] .topbar select, [data-world="chamber"] .topbar .bg-white { background-color: #10262f; color: var(--chamber-text); border-color: rgba(255, 255, 255, 0.15); }
+/* Dark header while in the Chamber: keep every label at AA on the dark bar. */
+@layer utilities {
+  [data-world="chamber"] .topbar .text-ink-3 { color: var(--chamber-muted); }
+  [data-world="chamber"] .topbar .\!text-amber-ink { color: #f0c27a !important; }
+  [data-world="chamber"] .topbar .text-confirmed-text { color: #7fd1ae; }
+}
+[data-world="chamber"] .topbar .track-line:not(.on):not(.fray):not(.ok) { background: rgba(255, 255, 255, 0.14); }
+[data-world="chamber"] .topbar .bead.empty { background: transparent; border-color: rgba(255, 255, 255, 0.35); }

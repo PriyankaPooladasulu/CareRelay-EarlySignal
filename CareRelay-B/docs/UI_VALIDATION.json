@@ -1,0 +1,14 @@
+{
+  "mode": "API-generated fixtures; no live browser-server claim",
+  "errors": [],
+  "unexpectedRoutes": [],
+  "approvalRequests": 1,
+  "completionRequests": 1,
+  "auditPages": 4,
+  "mobile": {
+    "viewport": 390,
+    "content": 390
+  },
+  "restoredCompletedStatus": true,
+  "notYetAndUncheckedDoNotSubmit": true
+}
