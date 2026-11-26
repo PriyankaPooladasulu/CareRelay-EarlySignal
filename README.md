@@ -8,6 +8,8 @@ Built for the **Women in AI Canada Hackathon 2026**, Theme 4 / Challenge 1: AI f
 
 > **Prototype notice.** CareRelay is not a medical device and does not diagnose, prescribe, stage disease or predict individual outcomes. Every patient, record and device reading in this repository is synthetic. Don't use it with real patient data.
 
+Check out the demo: https://care-relay-early-signal.vercel.app/
+
 ---
 
 ## The problem
